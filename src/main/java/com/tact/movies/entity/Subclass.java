@@ -8,6 +8,12 @@ public class Subclass {
   private String name;
   private String catalogId;
 
+  public Subclass(String id, long isUse, String name, String catalogId) {
+    this.id = id;
+    this.isUse = isUse;
+    this.name = name;
+    this.catalogId = catalogId;
+  }
 
   public String getId() {
     return id;
