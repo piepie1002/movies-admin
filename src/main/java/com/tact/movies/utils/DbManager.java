@@ -31,6 +31,7 @@ public class DbManager {
     public DbManager() {
     }
 
+    //创建单例对象
     public static DbManager getInstance() {
         if (instance==null){
             synchronized (DbManager.class){
@@ -51,6 +52,8 @@ public class DbManager {
         }
         return conn;
     }
+
+
     //释放资源的方法
     public static void closeAll(AutoCloseable...closeables){
         if (closeables!=null){
@@ -63,6 +66,8 @@ public class DbManager {
             }
         }
     }
+
+    //获取
     public static DataSource getDs(){
         return ds;
     }
