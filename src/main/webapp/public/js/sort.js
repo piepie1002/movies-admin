@@ -11,6 +11,7 @@ $(function () {
             sortCateLogData(cateLogs);
             showArea(locs);
             showSubClass(result.data.subClasses);
+            showDecade(result.data.decades);
         }else {
             alert("系统繁忙,请稍后再试");
         }
@@ -81,6 +82,21 @@ $(function () {
                         $("<li>")
                             .attr("id","subClass_id"+subClass.id)
                             .text(subClass.name)
+                    )
+            )
+        }
+    }
+   /* <a href="xl/1.html?onDecade=2018">
+        <li id="onDecade2018">2018</li></a>*/
+    function showDecade(decades) {
+        for (const decade of decades) {
+            $("#sort-decade").append(
+                $("<a>")
+                    .attr("href","xl/l.html?onDecade="+decade.name)
+                    .append(
+                        $("<li>")
+                            .attr("id","onDecade"+decade.name)
+                            .text(decade.name)
                     )
             )
         }

@@ -8,6 +8,11 @@ public class Decade {
   private String name;
   private long sort;
 
+  public Decade(String id, long isUse, String name) {
+    this.id = id;
+    this.isUse = isUse;
+    this.name = name;
+  }
 
   public String getId() {
     return id;
