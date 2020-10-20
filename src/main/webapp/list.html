@@ -1,0 +1,266 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--<base href="http://119.23.190.71:8089/im/">-->
+    <title>所有影片</title>
+    <meta name="pragma" content="no-cache">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="0">
+    <meta name="keywords" content="为梦而追,最新电影,最新电视剧，无广告看电视">
+    <meta name="description" content="最新免费电影,最新电视剧，最新动漫，无广告在线影片，提供最新最快最全的电影资讯,提供迅雷看看西瓜电影点播、迅雷电影下载,同时提供各大视频网站视频无广告在线云点播!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all">
+    <meta name="windows-Target" content="_top">
+    <meta name="author" content="chl14@163.com">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="static/img/pub/lovsvol_64.ico">
+    <link rel="stylesheet" href="public/static/css/base.css?v=1603155961057"/>
+    <link rel="stylesheet" href="plugins/topNav/css/head.css?v=1603155961057" />
+
+    <!--BootStrap 框架-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap.css?v=1603155961057">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-grid.css?v=1603155961057">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-reboot.css?v=1603155961057">
+    <!--IE8只能支持jQuery1.9-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="public/js/list.js"></script>
+
+    <!--=====================CSS_Link===========================-->
+
+    <!--=====================JS_Link===========================-->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 12px;
+            font-family: '微软雅黑';
+        }
+
+        a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        /*影片列表*/
+        .film-list {
+            width: 98%;
+            height: auto;
+            padding: 1%;
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .film-list li {
+            list-style: none;
+            float: left;
+            width: 104px;
+            height: 190px;
+            margin: 3px;
+        }
+
+        .film-list li img {
+            width: 86px;
+            height: 122px;
+            padding: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .film-info {
+            width: 98%;
+            padding: 1%;
+            height: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .film-info a {
+            color: #1d94ff;
+        }
+
+        .film-info p {
+            color: #A9A8A8;
+        }
+
+        /*影片列表*/
+        .search-box {
+            width: 100%;
+            height: auto;
+            text-align: right;
+            margin: 70px auto 0px auto;
+        }
+
+        /*box框架*/
+        .box {
+            width: 1190px;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .box-left {
+            width: 290px;
+            height: auto;
+            float: left;
+            overflow: hidden;
+        }
+
+        .box-right {
+            width: 900px;
+            height: auto;
+            float: right;
+            overflow: hidden;
+        }
+
+        /*box框架*/
+        /*导航*/
+        .nav-title {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            font-size: 12px;
+            font-family: '微软雅黑';
+            cursor: pointer;
+
+        }
+
+        .nav-icon {
+            font-style: normal;
+            height: 100%;
+            width: 30px;
+            display: inline-block;
+            background: #fff url("public/static/img/pub/nav.jpg") -144px -27px no-repeat; /*-143px -27px*/
+        }
+
+        .nav1-ul {
+            width: 60%;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .nav1-li {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-ul {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-li {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        /*导航*/
+    </style>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+            <ul class="nav1-ul">
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>影片管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="film.html">
+                            <li class="nav2-li">添加影片</li>
+                        </a>
+                        <a href="list.html">
+                            <li class="nav2-li">所有影片</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>目录管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="catalog.html">
+                            <li class="nav2-li">添加目录</li>
+                        </a>
+                        <a href="vipCode.html">
+                            <li class="nav2-li">VIP管理</li>
+                        </a>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-9">
+            <div style="margin:0px auto;width:100%;"></div>
+            <div class="search-box">
+                <form action="list.html" method="post">
+                    <input type="search" name="name" value="" autocomplete="off"
+                           placeholder="请输入影片名称"/>
+                </form>
+            </div>
+            <div style="width:100%;margin: 3px auto;">
+                <ul class="film-list" id="all-list">
+                    <!--影片信息-->
+
+                </ul>
+            </div>
+            <div style="width:80%;margin: 100px auto;height: auto;overflow: hidden;">
+                <!--
+
+                    需要修改 1 处地方
+
+                -->
+
+                <p style="text-align: center;">
+                    <!--1.修改-->
+                    <script type="text/javascript">
+                        function _change() {
+                            var select = document.getElementById("select");
+                            location = "list.html?&pc=" + select.value;
+                        }
+                    </script>
+
+                    第1页/共1页
+                    <a href="list.html?&pc=1">首页</a>
+
+
+
+                    <a href="javascript:;">上一页</a>
+
+
+
+
+                    1
+
+                    <a href="javascript:;">下一页</a>
+                    <a href="list.html?&pc=1">尾页</a>　
+                    <select name="pc" onchange="_change()" id="select">
+
+                        <option value="1"
+                                selected="selected" >1</option>
+
+                    </select>
+                    &nbsp;总共46部　
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
