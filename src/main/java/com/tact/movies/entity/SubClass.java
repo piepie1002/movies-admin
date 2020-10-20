@@ -1,17 +1,17 @@
 package com.tact.movies.entity;
 
 
-public class Subclass {
+public class SubClass {
 
   private String id;
   private long isUse;
   private String name;
   private String catalogId;
 
-  public Subclass() {
+  public SubClass() {
   }
 
-  public Subclass(String id, String name) {
+  public SubClass(String id, String name) {
     this.id = id;
     this.name = name;
   }
@@ -51,4 +51,14 @@ public class Subclass {
     this.catalogId = catalogId;
   }
 
+  @Override
+  public String toString() {
+    return "SubClass{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            ", catalogId='" + catalogId + '\'' +
+            '}';
+  }
 }
+

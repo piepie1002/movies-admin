@@ -1,7 +1,7 @@
 package com.tact.movies.entity;
 
 
-public class Vipcode {
+public class VipCode {
 
   private String id;
   private String code;

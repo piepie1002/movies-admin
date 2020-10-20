@@ -1,7 +1,11 @@
 package com.tact.movies.entity;
 
 
+<<<<<<< HEAD:src/main/java/com/tact/movies/entity/Decade.java
 public class Decade {
+=======
+public class CateLog {
+>>>>>>> cwg:src/main/java/com/tact/movies/entity/CateLog.java
 
   private String id;
   private long isUse;
