@@ -1,0 +1,974 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--    <base href="http://119.23.190.71:8089/im/">-->
+    <title>添加影片</title>
+
+
+
+    <meta name="pragma" content="no-cache">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="0">
+    <meta name="keywords" content="为梦而追,最新电影,最新电视剧，无广告看电视">
+    <meta name="description" content="最新免费电影,最新电视剧，最新动漫，无广告在线影片，提供最新最快最全的电影资讯,提供迅雷看看西瓜电影点播、迅雷电影下载,同时提供各大视频网站视频无广告在线云点播!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all">
+    <meta name="windows-Target" content="_top">
+    <meta name="author" content="chl14@163.com">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="static/img/pub/lovsvol_64.ico">
+    <link rel="stylesheet" href="public/static/css/base.css?v=1603087363588"/>
+    <link rel="stylesheet" href="plugins/topNav/css/head.css?v=1603087363588" />
+
+    <!--BootStrap 框架-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap.css?v=1603087363588">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-grid.css?v=1603087363588">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-reboot.css?v=1603087363588">
+
+
+
+
+
+    <script src="public/static/js/jquery-2.0.0.min.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+    <script type="text/javascript" src="public/static/js/jquery.lazyload.min.js?v=1603087363588"></script>
+    <script src="public/static/js/base/base.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+    <!--IE8只能支持jQuery1.9-->
+    <!--[if lte IE 8]>
+    <script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <![endif]-->
+
+    <!--BootStrap 框架-->
+    <script src="plugins/bootstrap4.0.0/js/bootstrap.bundle.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+    <script src="plugins/bootstrap4.0.0/js/popper.min.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+    <script src="plugins/bootstrap4.0.0/js/bootstrap.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+
+
+    <script src="public/static/js/base/jquery.nicescroll.js?v=1603087363588" type="text/javascript" charset="UTF-8" ></script>
+    <!--=====================CSS_Link===========================-->
+    <link rel="stylesheet" href="plugins/uploadify/uploadify.css" type="text/css">
+    <!--=====================JS_Link===========================-->
+    <script type="text/javascript" src="public/js/film1.js"></script>
+    <script type="text/javascript" src="plugins/uploadify/jquery.uploadify.min.js"></script>
+
+
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            zoom: 1;
+            font-size: 12px;
+            font-family: '微软雅黑';
+        }
+
+        a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        .input {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: rgba(195, 221, 236, 0.14);
+            line-height: 30px;
+            outline: none;
+            float: left;
+            margin-right: 5px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .contentType {
+            width: 50%;
+            min-height: 100px;
+        }
+
+        .left-con {
+            width: 9%;
+            height: auto;
+            overflow: hidden;
+            float: left;
+            text-align: left;
+            line-height: 35px;
+            font-size: 14px;
+            font-family: '微软雅黑';
+            padding: 0.8%;
+        }
+
+        .right-con {
+            width: 88%;
+            height: auto;
+            overflow: hidden;
+            float: right;
+            padding: 1%;
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
+
+        .film-info {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .film-info li {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border-bottom: 1px solid #efefef;
+            list-style: none;
+        }
+
+        .fixSelect {
+            width: 212px;
+            height: 31px;
+            font-size: 14px;
+            font-family: '微软雅黑';
+            padding: 0px;
+        }
+
+        .btn {
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #efefef;
+            border: 1px solid #cccccc;
+            text-decoration: none;
+            color: #444;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #1d94ff;
+            border: 1px solid #1d94ff;
+            color: white;
+        }
+
+        .title {
+            background: #efefef;
+        }
+
+        .longInput {
+            width: 50%;
+        }
+
+        .alert-box {
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #444;
+            margin-right: 10px;
+            border: 1px solid #F3B99E;
+            background: #F3D8D6;
+        }
+
+        .edit, .label-input {
+            display: none;
+        }
+
+        .show {
+            padding: 4px 8px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            color: #444;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
+
+        .label:hover .edit {
+            display: inline-block;
+        }
+
+        .zi_yuan_list {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .zi_yuan_list li {
+            list-style: none;
+            height: auto;
+            width: 18%;
+            float: left;
+            font-size: 12px;
+            border: none;
+            padding: 1%;
+            overflow: hidden;
+            font-family: '微软雅黑';
+            text-align: center;
+
+        }
+
+        .zi_yuan_list li .show {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0px;
+        }
+
+        .del {
+            color: #686868;
+            padding: 5px;
+            border: 1px #5B5B5B solid;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .file-pre img, .update-pre img {
+            max-width: 800px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 160px;
+            border: 1px solid #dddddd;
+        }
+
+        /*box框架*/
+        .box {
+            width: 1190px;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .box-left {
+            width: 290px;
+            height: auto;
+            float: left;
+            overflow: hidden;
+        }
+
+        .box-right {
+            width: 900px;
+            height: auto;
+            float: right;
+            overflow: hidden;
+        }
+
+        /*box框架*/
+        /*导航*/
+        .nav-title {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            font-size: 12px;
+            font-family: '微软雅黑';
+            cursor: pointer;
+
+        }
+
+        .nav-icon {
+            font-style: normal;
+            height: 100%;
+            width: 30px;
+            display: inline-block;
+            background: #fff url("public/static/img/pub/nav.jpg") -144px -27px no-repeat; /*-143px -27px*/
+        }
+
+        .nav1-ul {
+            width: 60%;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .nav1-li {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-ul {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-li {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        /*导航*/
+    </style>
+
+    <script>
+        $(function () {
+            $(".nav-title").click(function () {
+                $(this).parent().find(".nav2-ul").toggle();
+                if ($(this).find(".nav-icon").css("background-position") == "-144px -27px") {
+                    $(this).find(".nav-icon").css("background-position", "-92px -27px");
+                } else {
+                    $(this).find(".nav-icon").css("background-position", "-144px -27px");
+                }
+            });
+
+            $(".uploadify-button").css({"line-height":"25px"});
+        })
+        /**
+         * 设置模板类型
+         */
+        function setMoban() {
+            $("#res_name").val("xxxx@@集##1##集数结束##分割符号");
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            /**
+             *
+             * 编辑取消按钮
+             */
+            $(".edit").click(function () {
+                $(this).parent().parent().find(".label-input").show();
+                $(this).parent().parent().find(".label").hide();
+                var t = $(this).attr("t");
+                if (t != undefined) {
+                    $("#cancel-bt").hide();
+                    $("#save-bt").hide();
+                }
+            })
+            $(".cancel").click(function () {
+                $(this).parent().parent().find(".label-input").hide();
+                $(this).parent().parent().find(".label").show();
+
+                var t = $(this).attr("t");
+                if (t != undefined) {
+                    var filepath = $(this).parent().parent().find(".label .update-pre div img").attr("src");
+
+                    $.ajax({
+                        type: "post",
+                        url: "delFile.html",
+                        cache: false,
+                        data: "picsPath=" + filepath,
+                        dataType: 'json',     //接受数据格式
+                        success: function (rs) {
+                            var data = JSON.parse(rs);
+                            if (data.code == "1") {
+                                $("#file_upload").show();
+                                $(this).parent().parent().find(".label .update-pre div").remove();
+                            } else {
+                                alert("删除失败!");
+                            }
+                        },
+                        error: function () {
+                            alert("系统繁忙!");
+                        }
+                    });
+                }
+
+            })
+
+            $(".save").click(function () {
+                debugger;
+                var key = $(this).parent().find(".update-input").attr("name");
+                var key1 = "";
+                var val = "";
+                var val1 = "";
+                var input = $(this).parent().find(".update-input");
+                if (input.attr("el") == "div") {
+                    val = input.val();
+                } else {
+                    if (key == "locName" || key == "typeName" || key =="isVip") {
+                        val = input.val();
+                        if(key !="isVip"){
+                            val = input.find("option:selected").text();
+                            key1 = input.attr("name1");
+                            val1 = input.val();
+                        }
+                    } else if (key == "image") {
+                        val = input.attr("src");
+                    } else {
+                        val = input.val();
+                    }
+                }
+                var film_id = $(this).attr("film_id");
+                if (val != undefined && val != "") {
+                    updateFilmInfo(film_id, key, val, this);
+                    if (key1 != "") {
+                        setTimeout(function () {
+                            updateFilmInfo(film_id, key1, val1, this);
+                        }, 3000);
+                    }
+                } else {
+                    alert("信息不完整");
+                }
+            })
+
+            function updateFilmInfo(f_id, key, val, t) {
+                $.ajax({
+                    url: "updateFilmInfo.html",
+                    type: "post",
+                    dataType: "json",
+                    data: "film_id=" + f_id + "&key=" + key + "&val=" + val,
+                    success: function (data) {
+                        if (data == "1") {
+                            $(t).parent().parent().find(".label-input").hide();
+                            if (key == "image") {
+                                $(t).parent().parent().find(".label").show().find("div img").attr("src", val);
+                                $("#file_upload").show();
+                                $(".file-pre div").remove();
+                            } else {
+                                if (key != "loc_id" && key != "type_id") {
+                                    if(key=="isVip"){
+                                        if(val=="1"){
+                                            val = "是";
+                                        }else{
+                                            val = "否";
+                                        }
+                                    }
+                                    $(t).parent().parent().find(".label").show().find(".show").text(val);
+                                }
+                            }
+                        } else {
+                            alert("更改失败");
+                        }
+                    },
+                    error: function () {
+                        alert("系统繁忙!");
+                    }
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+
+
+
+            <ul class="nav1-ul">
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>影片管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="film1.html">
+                            <li class="nav2-li">添加影片</li>
+                        </a>
+                        <a href="list.html">
+                            <li class="nav2-li">所有影片</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>目录管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="catalog.html">
+                            <li class="nav2-li">添加目录</li>
+                        </a>
+                        <a href="vipCode.html">
+                            <li class="nav2-li">VIP管理</li>
+                        </a>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-9">
+            <div style="width:100%; height: auto;overflow:hidden;margin: 0px auto;">
+                <ul class="film-info">
+                    <li class="title">
+                        <div class="left-con">添加影片</div>
+                        <div class="right-con"></div>
+                    </li>
+                    <li>
+                        <div class="left-con">片名:</div>
+                        <div class="right-con">
+
+
+
+                            <input class="input addFilmInput"  id="name" placeholder="请填写影片名称" autocomplete="off" value=""/>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">海报:</div>
+                        <div class="right-con">
+
+
+
+                            <input id="file_upload" name="file_upload" type="file">
+                            <div class="file-pre"></div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">上映年代:</div>
+                        <div class="right-con">
+
+
+
+                            <select id="onDecade" class="input fixSelect">
+
+                                <option value="2018">2018</option>
+
+                                <option value="2017">2017</option>
+
+                                <option value="2016">2016</option>
+
+                                <option value="2015">2015</option>
+
+                                <option value="2014">2014</option>
+
+                                <option value="2013">2013</option>
+
+                                <option value="2012">2012</option>
+
+                                <option value="2011">2011</option>
+
+                                <option value="2010">2010</option>
+
+                                <option value="2009">2009</option>
+
+                                <option value="2008">2008</option>
+
+                                <option value="2007">2007</option>
+
+                                <option value="2006">2006</option>
+
+                                <option value="2005">2005</option>
+
+                                <option value="2004">2004</option>
+
+                                <option value="2003">2003</option>
+
+                                <option value="2002">2002</option>
+
+                                <option value="2001">2001</option>
+
+                                <option value="2000">2000</option>
+
+                                <option value="1999">1999</option>
+
+                                <option value="1998">1998</option>
+
+                                <option value="1997">1997</option>
+
+                                <option value="1996">1996</option>
+
+                                <option value="1995">1995</option>
+
+                                <option value="1994">1994</option>
+
+                            </select><span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">状态:</div>
+                        <div class="right-con">
+
+
+
+                            <input class="input addFilmInput" value="全集" placeholder="全集/更新第几集" autocomplete="off" id="status"/>
+                            <span style="color:red;">*</span>
+
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">分辨率:</div>
+                        <div class="right-con">
+
+
+
+                            <select id="resolution" class="input fixSelect">
+                                <option value="1080">1080p</option>
+                                <option value="720">720p</option>
+                                <option value="480">480p</option>
+                            </select>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">类型:</div>
+                        <div class="right-con">
+
+
+
+                            <select class="cataLog_id_subClass input fixSelect">
+
+                                <option value="2f8382c4b6e863668d62bda4f0518c7f">短视频</option>
+
+                                <option value="f39c979857a4874a0157a4a6a4fe0000">电影</option>
+
+                                <option value="f39c979857a4c8c50157a8ea80700018">电视剧</option>
+
+                                <option value="f39c979857a4c8c50157a8eaaee30019">动漫</option>
+
+                            </select>&nbsp;
+                            <select class="subClass_id input fixSelect"></select>&nbsp;
+                            <select class="type_id input fixSelect" id="type_id"></select>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">演员:</div>
+                        <div class="right-con">
+
+
+
+                            <input class="input  addFilmInput" placeholder="请填写演员名称，多个演员请用逗号隔开" autocomplete="off" id="actor"/>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">地区:</div>
+                        <div class="right-con">
+
+
+
+
+                            <select id="locName" class="input fixSelect">
+
+                                <option value="0ecfa003a636b90ed367e5e7dabf3a75">香港</option>
+
+                                <option value="f39c979857a4c8c50157a9002ff9001c">欧美</option>
+
+                                <option value="f39c979857ad7e8c0157ae4cbcd20001">大陆</option>
+
+                                <option value="f39c979857ad7e8c0157ae5dd0450009">韩国</option>
+
+                                <option value="f39c979857ad7e8c0157af44b2a40017">美国</option>
+
+                                <option value="f39c979857b48a2a0157b798a5540009">加拿大</option>
+
+                                <option value="f39c979857b48a2a0157b98c59330049">法国</option>
+
+                                <option value="f39c979857b48a2a0157be611374007c">日本</option>
+
+                            </select>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">剧情:</div>
+                        <div class="right-con">
+
+
+
+                            <textarea class="input contentType addFilmInput" placeholder="请简短填写剧情介绍" autocomplete="off" id="plot"></textarea>
+                            <span style="color:red;">*</span>
+
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con">是否vip:</div>
+                        <div class="right-con">
+
+
+
+                            <select name="isVip"  id="isVip" class="input fixSelect update-input" el="select">
+                                <option value="">请选择</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                            <span style="color:red;">*</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left-con"></div>
+                        <div class="right-con">
+
+                            <a href="javascript:;" class="btn" id="addFilm-btn">添加影片</a>
+                            <a href="javascript:;" class="btn" onclick="clearAddFilmInput()">清空</a>
+
+                        </div>
+                    </li>
+
+
+
+                    <li class="title">
+                        <div class="left-con">添加资源</div>
+                        <div class="right-con"><span class="zhuti">
+
+                </span></div>
+                    </li>
+                    <li>
+                        <div style="width: 200px;height: auto;margin: 10px auto;">
+                            <input id="file_upload_src" name="file_upload" type="file">
+                        </div>
+                        <div class="file-pre-file" style="margin: 10px auto;text-align: center;"></div>
+                    </li>
+                    <li>
+                        <div class="left-con">资源名:</div>
+                        <div class="right-con">
+                            <input class="input longInput addResInput" placeholder="请填写资源名" autocomplete="off" id="res_name"/>
+                            <span style="color:red;">*</span><span style="color:#ddd;">(若百度资源请将密码填在此处，无需填写名称)</span><a href="javascript:;"  class="btn" onclick="setMoban()">多资源模板</a></div>
+                    </li>
+
+                    <li>
+                        <div class="left-con">当前集数:</div>
+                        <div class="right-con">
+                            <select class="input fixSelect" id="res_episodes">
+
+                                <option value="1">1</option>
+
+                                <option value="2">2</option>
+
+                                <option value="3">3</option>
+
+                                <option value="4">4</option>
+
+                                <option value="5">5</option>
+
+                                <option value="6">6</option>
+
+                                <option value="7">7</option>
+
+                                <option value="8">8</option>
+
+                                <option value="9">9</option>
+
+                                <option value="10">10</option>
+
+                                <option value="11">11</option>
+
+                                <option value="12">12</option>
+
+                                <option value="13">13</option>
+
+                                <option value="14">14</option>
+
+                                <option value="15">15</option>
+
+                                <option value="16">16</option>
+
+                                <option value="17">17</option>
+
+                                <option value="18">18</option>
+
+                                <option value="19">19</option>
+
+                                <option value="20">20</option>
+
+                                <option value="21">21</option>
+
+                                <option value="22">22</option>
+
+                                <option value="23">23</option>
+
+                                <option value="24">24</option>
+
+                                <option value="25">25</option>
+
+                                <option value="26">26</option>
+
+                                <option value="27">27</option>
+
+                                <option value="28">28</option>
+
+                                <option value="29">29</option>
+
+                                <option value="30">30</option>
+
+                                <option value="31">31</option>
+
+                                <option value="32">32</option>
+
+                                <option value="33">33</option>
+
+                                <option value="34">34</option>
+
+                                <option value="35">35</option>
+
+                                <option value="36">36</option>
+
+                                <option value="37">37</option>
+
+                                <option value="38">38</option>
+
+                                <option value="39">39</option>
+
+                                <option value="40">40</option>
+
+                                <option value="41">41</option>
+
+                                <option value="42">42</option>
+
+                                <option value="43">43</option>
+
+                                <option value="44">44</option>
+
+                                <option value="45">45</option>
+
+                                <option value="46">46</option>
+
+                                <option value="47">47</option>
+
+                                <option value="48">48</option>
+
+                                <option value="49">49</option>
+
+                                <option value="50">50</option>
+
+                                <option value="51">51</option>
+
+                                <option value="52">52</option>
+
+                                <option value="53">53</option>
+
+                                <option value="54">54</option>
+
+                                <option value="55">55</option>
+
+                                <option value="56">56</option>
+
+                                <option value="57">57</option>
+
+                                <option value="58">58</option>
+
+                                <option value="59">59</option>
+
+                                <option value="60">60</option>
+
+                                <option value="61">61</option>
+
+                                <option value="62">62</option>
+
+                                <option value="63">63</option>
+
+                                <option value="64">64</option>
+
+                                <option value="65">65</option>
+
+                                <option value="66">66</option>
+
+                                <option value="67">67</option>
+
+                                <option value="68">68</option>
+
+                                <option value="69">69</option>
+
+                                <option value="70">70</option>
+
+                                <option value="71">71</option>
+
+                                <option value="72">72</option>
+
+                                <option value="73">73</option>
+
+                                <option value="74">74</option>
+
+                                <option value="75">75</option>
+
+                                <option value="76">76</option>
+
+                                <option value="77">77</option>
+
+                                <option value="78">78</option>
+
+                                <option value="79">79</option>
+
+                                <option value="80">80</option>
+
+                                <option value="81">81</option>
+
+                                <option value="82">82</option>
+
+                                <option value="83">83</option>
+
+                                <option value="84">84</option>
+
+                                <option value="85">85</option>
+
+                                <option value="86">86</option>
+
+                                <option value="87">87</option>
+
+                                <option value="88">88</option>
+
+                                <option value="89">89</option>
+
+                                <option value="90">90</option>
+
+                                <option value="91">91</option>
+
+                                <option value="92">92</option>
+
+                                <option value="93">93</option>
+
+                                <option value="94">94</option>
+
+                                <option value="95">95</option>
+
+                                <option value="96">96</option>
+
+                                <option value="97">97</option>
+
+                                <option value="98">98</option>
+
+                                <option value="99">99</option>
+
+                                <option value="100">100</option>
+
+                            </select>
+                            <span style="color:red;">*</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="left-con">链接:</div>
+                        <div class="right-con">
+                            <textarea class="input contentType addResInput" placeholder="请填写资源链接，并在下个选择栏选择正确的资源类型" autocomplete="off" id="res_link"></textarea>
+                            <span style="color:red;">*</span></div>
+                    </li>
+
+                    <li>
+                        <div class="left-con">链接类型:</div>
+                        <div class="right-con">
+                            <select class="input fixSelect" id="res_linkType">
+                                <option value="Flh">在线</option>
+                                <option value="ed2k">电驴</option>
+                                <option value="thunder">迅雷</option>
+                                <option value="http">离线</option>
+                                <option value="dupan">度盘</option>
+                                <option value="other">其它</option>
+                            </select>
+                            <span style="color:red;">*</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="left-con"></div>
+                        <div class="right-con">
+                            <a href="javascript:;" class="btn" id="addRes-btn"
+                            >添加资源+</a>
+                            <a href="javascript:;" class="btn" onclick="clearAddResInput()">清空</a>
+                            <a href="javascript:;" class="alert-box">温馨提示：清空后可继续添加更多资源</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

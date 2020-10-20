@@ -1,0 +1,572 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--    <base href="http://119.23.190.71:8089/im/">-->
+    <title>首页</title>
+
+
+
+    <meta name="pragma" content="no-cache">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="0">
+    <meta name="keywords" content="为梦而追,最新电影,最新电视剧，无广告看电视">
+    <meta name="description" content="最新免费电影,最新电视剧，最新动漫，无广告在线影片，提供最新最快最全的电影资讯,提供迅雷看看西瓜电影点播、迅雷电影下载,同时提供各大视频网站视频无广告在线云点播!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all">
+    <meta name="windows-Target" content="_top">
+    <meta name="author" content="chl14@163.com">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+    <link rel="shortcut icon" href="static/img/pub/lovsvol_64.ico">
+    <link rel="stylesheet" href="public/static/css/base.css?v=1603090193645"/>
+    <link rel="stylesheet" href="plugins/topNav/css/head.css?v=1603090193645" />
+
+    <!--BootStrap 框架-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap.css?v=1603090193645">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-grid.css?v=1603090193645">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-reboot.css?v=1603090193645">
+
+
+
+
+
+    <script src="public/static/js/jquery-2.0.0.min.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+    <script type="text/javascript" src="public/static/js/jquery.lazyload.min.js?v=1603090193645"></script>
+    <script src="public/static/js/base/base.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+    <!--IE8只能支持jQuery1.9-->
+    <!--[if lte IE 8]>
+    <script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <![endif]-->
+
+    <!--BootStrap 框架-->
+    <script src="plugins/bootstrap4.0.0/js/bootstrap.bundle.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+    <script src="plugins/bootstrap4.0.0/js/popper.min.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+    <script src="plugins/bootstrap4.0.0/js/bootstrap.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+
+
+    <script src="public/static/js/base/jquery.nicescroll.js?v=1603090193645" type="text/javascript" charset="UTF-8" ></script>
+    <!--=====================CSS_Link===========================-->
+    <!--=====================JS_Link===========================-->
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            zoom: 1;
+            font-size: 12px;
+            font-family: '微软雅黑';
+        }
+
+        a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        .catalog_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        .subClass_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        .type_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        .loc_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        .level_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        .decade_name {
+            width: 200px;
+            height: 25px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background: #C3DDEC;
+            padding-left: 10px;
+            line-height: 25px;
+            outline: none;
+        }
+
+        /*box框架*/
+        .box {
+            width: 1190px;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .box-left {
+            width: 290px;
+            height: auto;
+            float: left;
+            overflow: hidden;
+        }
+
+        .box-right {
+            width: 900px;
+            height: auto;
+            float: right;
+            overflow: hidden;
+        }
+
+        /*box框架*/
+        /*按钮*/
+        .btn {
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #efefef;
+            border: 1px solid #cccccc;
+            text-decoration: none;
+            color: #444;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #1d94ff;
+            border: 1px solid #1d94ff;
+            color: white;
+        }
+
+        /*按钮*/
+
+
+        /*导航*/
+        .nav-title {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            font-size: 12px;
+            font-family: '微软雅黑';
+            cursor: pointer;
+
+        }
+
+        .nav-icon {
+            font-style: normal;
+            height: 100%;
+            width: 30px;
+            display: inline-block;
+            background: #fff url("public/static/img/pub/nav.jpg") -144px -27px no-repeat; /*-143px -27px*/
+        }
+
+        .nav1-ul {
+            width: 60%;
+            height: auto;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .nav1-li {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-ul {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .nav2-li {
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        /*导航*/
+    </style>
+
+    <script>
+        $(function () {
+            $(".nav-title").click(function () {
+                $(this).parent().find(".nav2-ul").toggle();
+                if ($(this).find(".nav-icon").css("background-position") == "-144px -27px") {
+                    $(this).find(".nav-icon").css("background-position", "-92px -27px");
+                } else {
+                    $(this).find(".nav-icon").css("background-position", "-144px -27px");
+                }
+            });
+        })
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+
+
+            <ul class="nav1-ul">
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>影片管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="film1.html">
+                            <li class="nav2-li">添加影片</li>
+                        </a>
+                        <a href="list.html">
+                            <li class="nav2-li">所有影片</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="nav1-li">
+                    <h4 class="nav-title"><i class="nav-icon">&nbsp;</i>目录管理</h4>
+                    <ul class="nav2-ul">
+                        <a href="catalog.html">
+                            <li class="nav2-li">添加目录</li>
+                        </a>
+                        <a href="vipCode.html">
+                            <li class="nav2-li">VIP管理</li>
+                        </a>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-9">
+            <div style="width:50%;float:left;height: auto;overflow: hidden;">
+                <span>一级分类</span><br/>
+                <div contenteditable="true" class="catalog_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_CataLog_btn btn">添加</a><br/><br/>
+
+                <span>二级子分类</span>
+                <select class="cataLog_id">
+
+                    <option value="2f8382c4b6e863668d62bda4f0518c7f">短视频</option>
+
+                    <option value="f39c979857a4874a0157a4a6a4fe0000">电影</option>
+
+                    <option value="f39c979857a4c8c50157a8ea80700018">电视剧</option>
+
+                    <option value="f39c979857a4c8c50157a8eaaee30019">动漫</option>
+
+
+                </select><br/>
+                <div contenteditable="true" class="subClass_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_SubClass_btn btn">添加</a><br/><br/>
+
+                <span>类型</span><br/>
+                <select class="cataLog_id_subClass">
+
+                    <option value="2f8382c4b6e863668d62bda4f0518c7f">短视频</option>
+
+                    <option value="f39c979857a4874a0157a4a6a4fe0000">电影</option>
+
+                    <option value="f39c979857a4c8c50157a8ea80700018">电视剧</option>
+
+                    <option value="f39c979857a4c8c50157a8eaaee30019">动漫</option>
+
+                </select>
+                <select class="subClass_id"></select><br/>
+                <div contenteditable="true" class="type_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_Type_btn btn">添加</a><br/><br/>
+                <br/>
+
+                <h2><span style="color:blue;">一级目录</span>--><span style="color:green;">二级目录</span>--><span
+                        style="color:#fd5c11;">类型</span></h2>
+
+                <span style="color:blue;">短视频</span><br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">动作片</span>-->
+
+                <span style="color:#fd5c11;">爱情片</span>
+
+                <span style="color:#fd5c11;">感情片</span>
+
+
+                <br/>
+
+                <br/>
+
+                <span style="color:blue;">电影</span><br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">动作片</span>-->
+
+                <span style="color:#fd5c11;">喜剧片</span>
+
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">剧情片</span>-->
+
+                <span style="color:#fd5c11;">犯罪片</span>
+
+                <span style="color:#fd5c11;">情色片</span>
+
+                <span style="color:#fd5c11;">爱情片</span>
+
+                <span style="color:#fd5c11;">家庭片</span>
+
+                <span style="color:#fd5c11;">动作片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">恐怖片</span>-->
+
+                <span style="color:#fd5c11;">惊悚片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">喜剧片</span>-->
+
+                <span style="color:#fd5c11;">爱情片</span>
+
+                <span style="color:#fd5c11;">奇幻片</span>
+
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">科幻片</span>-->
+
+                <span style="color:#fd5c11;">恐怖片</span>
+
+                <span style="color:#fd5c11;">灾难片</span>
+
+
+                <span style="color:#fd5c11;">格斗片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">爱情片</span>-->
+
+                <span style="color:#fd5c11;">科幻片</span>
+
+                <br/>
+
+                <br/>
+
+                <span style="color:blue;">电视剧</span><br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">科幻片</span>-->
+
+
+                <span style="color:#fd5c11;">惊悚片</span>
+
+                <span style="color:#fd5c11;">悬疑片</span>
+
+                <span style="color:#fd5c11;">格斗片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">剧情片</span>-->
+
+                <span style="color:#fd5c11;">爱情片</span>
+
+                <span style="color:#fd5c11;">犯罪片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">古装片</span>-->
+
+                <span style="color:#fd5c11;">武侠片</span>
+
+                <span style="color:#fd5c11;">奇幻片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">喜剧片</span>-->
+
+                <span style="color:#fd5c11;">奇幻片</span>
+
+                <br/>
+
+                <br/>
+
+                <span style="color:blue;">动漫</span><br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">剧情片</span>-->
+
+                <span style="color:#fd5c11;">武侠片</span>
+
+                <span style="color:#fd5c11;">动作片</span>
+
+                <span style="color:#fd5c11;">冒险片</span>
+
+                <br/>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:green;">动画片</span>-->
+
+                <span style="color:#fd5c11;">内详</span>
+
+                <span style="color:#fd5c11;">喜剧片</span>
+
+                <span style="color:#fd5c11;">格斗片</span>
+
+                <span style="color:#fd5c11;">惊悚片</span>
+
+                <span style="color:#fd5c11;">动作片</span>
+
+                <span style="color:#fd5c11;">科幻片</span>
+
+                <br/>
+
+                <br/>
+
+            </div>
+            <div style="width:50%;float:left;height: auto;overflow: hidden;">
+
+                <span>地区</span><br/>
+                <div contenteditable="true" class="loc_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_Loc_btn btn">添加</a><br/><br/>
+
+                <span>级别</span><br/>
+                <div contenteditable="true" class="level_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_Level_btn btn">添加</a><br/><br/>
+
+                <span>年代</span><br/>
+                <div contenteditable="true" class="decade_name" style="display: inline-block;"></div>
+                <a href="javascript:;" class="add_Decade_btn btn">添加</a><br/><br/>
+
+                <h2>地区-->级别-->年代</h2>
+                <br/>
+                <span>地区--></span>
+
+                香港
+
+                欧美
+
+                大陆
+
+                韩国
+
+                美国
+
+                加拿大
+
+                法国
+
+                日本
+
+                <br/>
+                <span>级别--></span>
+
+                优先
+
+                <br/>
+
+                <span>年代--></span>
+
+                2018
+
+                2017
+
+                2016
+
+                2015
+
+                2014
+
+                2013
+
+                2012
+
+                2011
+
+                2010
+
+                2009
+
+                2008
+
+                2007
+
+                2006
+
+                2005
+
+                2004
+
+                2003
+
+                2002
+
+                2001
+
+                2000
+
+                1999
+
+                1998
+
+                1997
+
+                1996
+
+                1995
+
+                1994
+
+                <br/>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
