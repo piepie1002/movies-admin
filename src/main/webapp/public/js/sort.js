@@ -5,9 +5,11 @@ $(function () {
     $.get(SORT_URL,function (result) {
         if (result.status ===200){
             var cateLogs = result.data.cateLogs;
+            var locs = result.data.locs;
             showCateLogData(cateLogs);
             allCateLogData(cateLogs);
             sortCateLogData(cateLogs);
+            showArea(locs);
         }else {
             alert("系统繁忙,请稍后再试");
         }
@@ -51,5 +53,25 @@ $(function () {
                     )
             )
         }
+    }
+   /* <a href="xl/1.html?loc_id=0ecfa003a636b90ed367e5e7dabf3a75">
+        <li id="loc_id0ecfa003a636b90ed367e5e7dabf3a75">香港</li></a>*/
+    function showArea(locs) {
+        for (const loc of locs) {
+            $("#sort-ul4").append(
+                $("<a>")
+                    .attr("href","xl/l.html?loc_id="+loc.id)
+                    .append(
+                        $("<li>")
+                            .attr("id","loc_id"+loc.id)
+                            .text(loc.name)
+                    )
+            )
+        }
+    }
+    /*<a href="xl/1.html?cataLog_id=f39c979857a4874a0157a4a6a4fe0000&subClass_id=f39c979857a4874a0157a4a723560001">
+        <li id="subClass_idf39c979857a4874a0157a4a723560001">动作片</li></a>*/
+    function showSubClass(subClass) {
+        
     }
 })
