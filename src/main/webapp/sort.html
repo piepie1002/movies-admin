@@ -1,0 +1,688 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--<base href="http://119.23.190.71:8089/im/">-->
+    <title>最新影片下载=高清影片下载-迅雷下载</title>
+    <meta name="pragma" content="no-cache">
+    <meta name="cache-control" content="no-cache">
+    <meta name="expires" content="0">
+    <meta name="keywords" content="为梦而追,最新电影,最新电视剧，无广告看电视">
+    <meta name="description" content="最新免费电影,最新电视剧，最新动漫，无广告在线影片，提供最新最快最全的电影资讯,提供迅雷看看西瓜电影点播、迅雷电影下载,同时提供各大视频网站视频无广告在线云点播!">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="all">
+    <meta name="windows-Target" content="_top">
+    <meta name="author" content="chl14@163.com">
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static/img/pub/lovsvol_64.ico">
+    <link rel="stylesheet" href="public/static/css/base.css?v=1603109613168"/>
+    <link rel="stylesheet" href="plugins/topNav/css/head.css?v=1603109613168" />
+    <!--BootStrap 框架-->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap.css?v=1603109613168">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-grid.css?v=1603109613168">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap4.0.0/css/bootstrap-reboot.css?v=1603109613168">
+    <!--IE8只能支持jQuery1.9-->
+    <!--=====================CSS_Link===========================-->
+    <link rel="stylesheet" type="text/css" href="public/static/css/index/1.css?v=">
+    <!--=====================JS_Link===========================-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+   <script src="public/js/sort.js"></script>
+</head>
+<body>
+
+
+<div style="width: 100%;height: auto;overflow:hidden;    margin-bottom: 10px;">
+
+    <!-- 头部begin -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="/">欢迎来到完美电影最新影片资源</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul id="sort-ul1" class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#myModal" href="javascript:;">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="" href="registerInput.html">注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:">|</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href="/">首页</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">登录</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form id="login_form">
+                        <div class="form-group">
+                            <label for="email">账号/邮箱</label>
+                            <input type="email" name="account_l" class="form-control" id="email" placeholder="账号/邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">密码</label>
+                            <input type="password" name="password_l" class="form-control" id="pwd" placeholder="密码">
+                        </div>
+                        <button type="button" class="btn btn-primary" id="login_btn">登录</button>
+                    </form>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--登录 END-->
+</div>
+
+<div class="container" style="margin-top: 50px;">
+
+    <div class="row">
+        <div class="col">
+            <marquee  onmouseover='this.stop()' onmouseout='this.start()'><a id="globalLoginBtn_register_input" href="registerInput.html">注册</a>|<a data-toggle="modal" data-target="#myModal" href="javascript:;">登录</a>后观看更多高清无码视频</marquee>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <ul id="sort-ul2" class="user-nav">
+                <a href="xl/1.html"><div class="user-nav-title">全部分类</div></a>
+
+            </ul>
+        </div>
+        <div class="col-sm-10">
+            <ul class="user-box-right-search" style="margin-top: 10px;">
+                <li>
+                    <div class="user-box-right-search-left">分类</div>
+                    <div class="user-box-right-search-right">
+                        <ul id="sort-ul3">
+                            <!--分类-->
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="user-box-right-search-left">地区</div>
+                    <div class="user-box-right-search-right">
+                        <ul>
+
+                            <a href="xl/1.html?loc_id=0ecfa003a636b90ed367e5e7dabf3a75">
+                                <li id="loc_id0ecfa003a636b90ed367e5e7dabf3a75">香港</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857a4c8c50157a9002ff9001c">
+                                <li id="loc_idf39c979857a4c8c50157a9002ff9001c">欧美</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857ad7e8c0157ae4cbcd20001">
+                                <li id="loc_idf39c979857ad7e8c0157ae4cbcd20001">大陆</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857ad7e8c0157ae5dd0450009">
+                                <li id="loc_idf39c979857ad7e8c0157ae5dd0450009">韩国</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857ad7e8c0157af44b2a40017">
+                                <li id="loc_idf39c979857ad7e8c0157af44b2a40017">美国</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857b48a2a0157b798a5540009">
+                                <li id="loc_idf39c979857b48a2a0157b798a5540009">加拿大</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857b48a2a0157b98c59330049">
+                                <li id="loc_idf39c979857b48a2a0157b98c59330049">法国</li></a>
+
+                            <a href="xl/1.html?loc_id=f39c979857b48a2a0157be611374007c">
+                                <li id="loc_idf39c979857b48a2a0157be611374007c">日本</li></a>
+
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-box-right-search-left">年代</div>
+                    <div class="user-box-right-search-right">
+                        <ul>
+
+                            <a href="xl/1.html?onDecade=2018">
+                                <li id="onDecade2018">2018</li></a>
+
+                            <a href="xl/1.html?onDecade=2017">
+                                <li id="onDecade2017">2017</li></a>
+
+                            <a href="xl/1.html?onDecade=2016">
+                                <li id="onDecade2016">2016</li></a>
+
+                            <a href="xl/1.html?onDecade=2015">
+                                <li id="onDecade2015">2015</li></a>
+
+                            <a href="xl/1.html?onDecade=2014">
+                                <li id="onDecade2014">2014</li></a>
+
+                            <a href="xl/1.html?onDecade=2013">
+                                <li id="onDecade2013">2013</li></a>
+
+                            <a href="xl/1.html?onDecade=2012">
+                                <li id="onDecade2012">2012</li></a>
+
+                            <a href="xl/1.html?onDecade=2011">
+                                <li id="onDecade2011">2011</li></a>
+
+                            <a href="xl/1.html?onDecade=2010">
+                                <li id="onDecade2010">2010</li></a>
+
+                            <a href="xl/1.html?onDecade=2009">
+                                <li id="onDecade2009">2009</li></a>
+
+                            <a href="xl/1.html?onDecade=2008">
+                                <li id="onDecade2008">2008</li></a>
+
+                            <a href="xl/1.html?onDecade=2007">
+                                <li id="onDecade2007">2007</li></a>
+
+                            <a href="xl/1.html?onDecade=2006">
+                                <li id="onDecade2006">2006</li></a>
+
+                            <a href="xl/1.html?onDecade=2005">
+                                <li id="onDecade2005">2005</li></a>
+
+                            <a href="xl/1.html?onDecade=2004">
+                                <li id="onDecade2004">2004</li></a>
+
+                            <a href="xl/1.html?onDecade=2003">
+                                <li id="onDecade2003">2003</li></a>
+
+                            <a href="xl/1.html?onDecade=2002">
+                                <li id="onDecade2002">2002</li></a>
+
+                            <a href="xl/1.html?onDecade=2001">
+                                <li id="onDecade2001">2001</li></a>
+
+                            <a href="xl/1.html?onDecade=2000">
+                                <li id="onDecade2000">2000</li></a>
+
+                            <a href="xl/1.html?onDecade=1999">
+                                <li id="onDecade1999">1999</li></a>
+
+                            <a href="xl/1.html?onDecade=1998">
+                                <li id="onDecade1998">1998</li></a>
+
+                            <a href="xl/1.html?onDecade=1997">
+                                <li id="onDecade1997">1997</li></a>
+
+                            <a href="xl/1.html?onDecade=1996">
+                                <li id="onDecade1996">1996</li></a>
+
+                            <a href="xl/1.html?onDecade=1995">
+                                <li id="onDecade1995">1995</li></a>
+
+                            <a href="xl/1.html?onDecade=1994">
+                                <li id="onDecade1994">1994</li></a>
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="film-list">
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d">
+                        <div  class="note-left" title="肖申克的救赎"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476009214377.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d"
+                                   title="肖申克的救赎"
+                                   target="_blank">肖申克的救赎</a><em> 1994</em></h2>
+                            <em class="star star4"></em>
+                            <p>主演： 蒂姆·罗宾斯 Tim Robbins   摩根·弗里曼 Morgan Freeman </p>
+                            <p><i>状态：全集</i>&nbsp;<i>地区：美国</i></p>
+                            <p><i>类型：犯罪片</i><i>更新：05-11</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c888c10157c8959aca0018">
+                        <div  class="note-left" title="秦时明月之百步飞剑 重制版"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476539027739.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c888c10157c8959aca0018"
+                                   title="秦时明月之百步飞剑 重制版"
+                                   target="_blank">秦时明月之百步飞剑 重制版</a><em> 2007</em></h2>
+                            <em class="star star5"></em>
+                            <p>主演：沈乐平</p>
+                            <p><i>状态：全集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：武侠片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c888c10157c8959aca0018#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c888c10157c8959aca0018#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c87bc86100d3">
+                        <div  class="note-left" title="宠物小精灵XY ポケットモンスターXY"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476537242669.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c87bc86100d3"
+                                   title="宠物小精灵XY ポケットモンスターXY"
+                                   target="_blank">宠物小精灵XY ポケットモンスターXY</a><em> 2013</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：松本梨香 / 大谷育江 / 牧口真幸 / 梶裕贵 / 伊濑茉莉也 / 上田佑司 / 远藤绫 / 林原惠美 / 三木真一郎 / 犬山犬子</p>
+                            <p><i>状态：更新至第136集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：科幻片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c87bc86100d3#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c87bc86100d3#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c86fce9c00d0">
+                        <div  class="note-left" title="解谜之音 ナゾトキネ"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476536395947.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c86fce9c00d0"
+                                   title="解谜之音 ナゾトキネ"
+                                   target="_blank">解谜之音 ナゾトキネ</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：原奈津子 / 徳井青空 / 松井惠理子 Eriko Mats / 佐々木未来 / 寺田御子</p>
+                            <p><i>状态：更新至第2集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：动作片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c86fce9c00d0#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c86fce9c00d0#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c8413646009a">
+                        <div  class="note-left" title="镇魂街 "><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476533466647.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c8413646009a"
+                                   title="镇魂街 "
+                                   target="_blank">镇魂街 </a><em> 2016</em></h2>
+                            <em class="star star5"></em>
+                            <p>主演：卢恒宇 / 李姝洁</p>
+                            <p><i>状态：更新至第23集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：冒险片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8413646009a#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8413646009a#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c83909810088">
+                        <div  class="note-left" title="全职法师"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476532900197.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c83909810088"
+                                   title="全职法师"
+                                   target="_blank">全职法师</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：柯暮卿 / 赵路 / 沈达威</p>
+                            <p><i>状态：更新至第8集</i>&nbsp;<i>地区：欧美</i></p>
+                            <p><i>类型：动作片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c83909810088#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c83909810088#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c8387e6f0086">
+                        <div  class="note-left" title="黑街GANGSTA匪徒 "><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476532925912.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c8387e6f0086"
+                                   title="黑街GANGSTA匪徒 "
+                                   target="_blank">黑街GANGSTA匪徒 </a><em> 2015</em></h2>
+                            <em class="star star5"></em>
+                            <p>主演：诹访部顺一 / 津田健次郎 / 能登麻美子 / 吉野裕行 / 金尾哲夫 / 石川界人 / 植田佳奈 / 樱井孝宏 / 榊原良子 / 稻田彻 / 小松未可子 / 三上哲 / 悠木碧 / 矶边万沙子</p>
+                            <p><i>状态：全集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：动作片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8387e6f0086#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8387e6f0086#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c832c8200082">
+                        <div  class="note-left" title="数码兽宇宙 应用怪兽 デジモンユニバース アプリモンスターズ"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476532498407.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c832c8200082"
+                                   title="数码兽宇宙 应用怪兽 デジモンユニバース アプリモンスターズ"
+                                   target="_blank">数码兽宇宙 应用怪兽 デジモンユニバース アプリモンスターズ</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：内山夕实 / 庄司宇芽香 / 古城门志帆 / 丰永利行 / 菊池心 / 熊井统子 / 田村奈央 / 阪口大助 / 古川慎 / 渕上舞 / 广桥凉 / 高木渉</p>
+                            <p><i>状态：更新至第3集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：科幻片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c832c8200082#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c832c8200082#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c82c79b3007d">
+                        <div  class="note-left" title="侍灵演武-将星乱新番"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476532075194.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c82c79b3007d"
+                                   title="侍灵演武-将星乱新番"
+                                   target="_blank">侍灵演武-将星乱新番</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：更新至第2集</p>
+                            <p><i>状态：更新至第2集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：动作片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c82c79b3007d#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c82c79b3007d#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c8282742006d">
+                        <div  class="note-left" title="亚人惊悚热血"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476531805842.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c8282742006d"
+                                   title="亚人惊悚热血"
+                                   target="_blank">亚人惊悚热血</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：宫野真守  细谷佳正  大塚芳忠  樱井孝宏  </p>
+                            <p><i>状态：更新至第15集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：惊悚片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8282742006d#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c8282742006d#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c815f298005b">
+                        <div  class="note-left" title="欧布奥特曼 ウルトラマンオーブ"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476530606794.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c815f298005b"
+                                   title="欧布奥特曼 ウルトラマンオーブ"
+                                   target="_blank">欧布奥特曼 ウルトラマンオーブ</a><em> 2016</em></h2>
+                            <em class="star star5"></em>
+                            <p>主演：石黑英雄</p>
+                            <p><i>状态：更新至第14集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：格斗片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c815f298005b#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c815f298005b#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c785a4d10057">
+                        <div  class="note-left" title="十万个冷笑话 大电影"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476521167424.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c785a4d10057"
+                                   title="十万个冷笑话 大电影"
+                                   target="_blank">十万个冷笑话 大电影</a><em> 2015</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：卢恒宇  李姝洁  </p>
+                            <p><i>状态：全集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：奇幻片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c785a4d10057#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c785a4d10057#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c75ea88f0041">
+                        <div  class="note-left" title="文豪野犬 文豪ストレイドッグス"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476518596002.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c75ea88f0041"
+                                   title="文豪野犬 文豪ストレイドッグス"
+                                   target="_blank">文豪野犬 文豪ストレイドッグス</a><em> 2016</em></h2>
+                            <em class="star star4"></em>
+                            <p>主演：上村祐翔 / 宫野真守 / 细谷佳正 / 神谷浩史 / 丰永利行 / 小山力也 / 小见川千明 / 小野贤章 / 花仓洸幸 / 嶋村侑</p>
+                            <p><i>状态：更新至第15集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：动作片</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c75ea88f0041#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c75ea88f0041#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857c72e810157c74fe92d0031">
+                        <div  class="note-left" title="兔丸内详迅雷下载"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476517675324.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857c72e810157c74fe92d0031"
+                                   title="兔丸内详迅雷下载"
+                                   target="_blank">兔丸内详迅雷下载</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：内详</p>
+                            <p><i>状态：更新至第11集</i>&nbsp;<i>地区：日本</i></p>
+                            <p><i>类型：内详</i><i>更新：10-15</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c74fe92d0031#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857c72e810157c74fe92d0031#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857b48a2a0157c326e58c0119">
+                        <div  class="note-left" title="步步惊心：丽 달의 연인-보보경심：려 "><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476447885530.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857b48a2a0157c326e58c0119"
+                                   title="步步惊心：丽 달의 연인-보보경심：려 "
+                                   target="_blank">步步惊心：丽 달의 연인-보보경심：려 </a><em> 2016</em></h2>
+                            <em class="star star4"></em>
+                            <p>主演：李准基 / 姜河那 / 李知恩 / 洪宗玄 / 南柱赫 / 边伯贤 / 成东日 / 金成钧 / 禹喜珍 / 徐珠贤 / 朴诗恩</p>
+                            <p><i>状态：更新至15集</i>&nbsp;<i>地区：韩国</i></p>
+                            <p><i>类型：爱情片</i><i>更新：10-14</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c326e58c0119#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c326e58c0119#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857b48a2a0157c30c2ceb010c">
+                        <div  class="note-left" title="我不是妖怪"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476446132329.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857b48a2a0157c30c2ceb010c"
+                                   title="我不是妖怪"
+                                   target="_blank">我不是妖怪</a><em> 2016</em></h2>
+                            <em class="star star"></em>
+                            <p>主演：张雨剑 / 刘冬沁 / 王嵛 / 书亚信 / 吴优 / 左航</p>
+                            <p><i>状态：全12集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：奇幻片</i><i>更新：10-14</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c30c2ceb010c#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c30c2ceb010c#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2f2a32700f2">
+                        <div  class="note-left" title="十宗罪"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476444455958.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857b48a2a0157c2f2a32700f2"
+                                   title="十宗罪"
+                                   target="_blank">十宗罪</a><em> 2016</em></h2>
+                            <em class="star star3"></em>
+                            <p>主演：《十宗罪》由韩国导演李东勋执导，影帝曾志伟监制，张翰、曾志伟、于小彤、张雅玫领衔主演，讲述由四个警察组成的蜘蛛特案组面对变态的罪犯，调查凶杀案件的故事。</p>
+                            <p><i>状态：21集全</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：犯罪片</i><i>更新：10-14</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2f2a32700f2#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2f2a32700f2#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2c661a300b5">
+                        <div  class="note-left" title="诛仙青云志"><img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476441362704.jpg" /></div>
+                    </a>
+                    <div class="film-info">
+                        <div class="info">
+                            <h2><a class="film-info-a" href="xl/detail.html?film_id=f39c979857b48a2a0157c2c661a300b5"
+                                   title="诛仙青云志"
+                                   target="_blank">诛仙青云志</a><em> 2016</em></h2>
+                            <em class="star star5"></em>
+                            <p>主演： 李易峰 / 赵丽颖 / 杨紫 / 舒畅 / 王源 / 王俊凯 / 易烊千玺 / 熊乃瑾 / 魏巍 / 何中华 / 唐艺昕 / 秦俊杰 / 赵立新 / 陈创 / 吴樾 / 焦俊艳 / 白雪 / 成毅 / 茅子俊 / 刘学义 / 李晨浩 / 朴铄 / 黄海冰</p>
+                            <p><i>状态：更新至第46集</i>&nbsp;<i>地区：大陆</i></p>
+                            <p><i>类型：奇幻片</i><i>更新：10-14</i></p>
+                            <p></p>
+                            <span>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2c661a300b5#kan" class="watch-btn" target="_blank">观看</a>
+                                <a href="xl/detail.html?film_id=f39c979857b48a2a0157c2c661a300b5#down" class="download-btn" target="_blank">下载</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+            <div style="width:100%;margin: 5px auto;height: auto;overflow: hidden;">
+
+                <p style="text-align: right;">
+                    <!--1.修改-->
+                    <script type="text/javascript">
+                        function _change() {
+                            var select = document.getElementById("select");
+                            location = "xl/1.html?&pc=" + select.value;
+                        }
+                    </script>
+                    第1页/共3页
+                    
+                    <a href="javascript:;" class="nouse-btn">首页</a>&nbsp;<a href="javascript:;" class="nouse-btn">上一页</a>
+                    
+
+                    <a href="javascript:;" class="nouse-btn">1</a>
+                    
+
+                    <a href="xl/1.html?&pc=2" class="use-btn">2</a>
+                    
+
+                    <a href="xl/1.html?&pc=3" class="use-btn">3</a>
+                    
+                    <a href="xl/1.html?&pc=2" class="use-btn">下一页</a>&nbsp;<a href="xl/1.html?&pc=3" class="use-btn">尾页</a>
+
+
+                    总共46部　
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 0px;">
+    <div id="footer"><p>免责声明:如果侵犯了你的权益，请发邮件至：piepie1002@163.com，我们会及时删除侵权内容，谢谢合作！</p>
+        <p>Copyright © 2020 鄂ICP备16028726号 2020 All Rights Reserved.
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1272902876'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272902876%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
