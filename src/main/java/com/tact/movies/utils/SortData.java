@@ -15,17 +15,19 @@ public class SortData {
     private List<Subclass>subClasses;
     private List<Res>ress;
     private List<Decade> decades;
+    private List<Film> filmList;
 
     public SortData() {
     }
 
-    public SortData(List<CateLog> cateLogs, List<Film> films, List<Loc> locs, List<Subclass> subClasses, List<Res> ress, List<Decade> decades) {
+    public SortData(List<CateLog> cateLogs, List<Film> films, List<Loc> locs, List<Subclass> subClasses, List<Res> ress, List<Decade> decades,List<Film> filmList) {
         this.cateLogs = cateLogs;
         this.films = films;
         this.locs = locs;
         this.subClasses = subClasses;
         this.ress = ress;
         this.decades = decades;
+        this.filmList = filmList;
     }
 
     public List<CateLog> getCateLogs() {
@@ -74,5 +76,13 @@ public class SortData {
 
     public void setDecades(List<Decade> decades) {
         this.decades = decades;
+    }
+
+    public List<Film> getFilmList() {
+        return filmList;
+    }
+
+    public void setFilmList(List<Film> filmList) {
+        this.filmList = filmList;
     }
 }

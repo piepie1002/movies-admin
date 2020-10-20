@@ -9,6 +9,6 @@ import java.util.List;
  * @author LIN
  * @since JDK 1.8
  */
-public interface SubclassDao {
+public interface SubClassDao {
      List<Subclass>selectSubClassList();
 }

@@ -1,6 +1,6 @@
 package com.tact.movies.dao.impl;
 
-import com.tact.movies.dao.SubclassDao;
+import com.tact.movies.dao.SubClassDao;
 import com.tact.movies.entity.Subclass;
 import com.tact.movies.utils.DbManager;
 
@@ -15,7 +15,7 @@ import java.util.List;
  * @author LIN
  * @since JDK 1.8
  */
-public class SubclassDaoImpl implements SubclassDao {
+public class SubClassDaoImpl implements SubClassDao {
     @Override
     public List<Subclass> selectSubClassList() {
         String sql = "select id,is_use,name,catalog_id from t_subclass";
