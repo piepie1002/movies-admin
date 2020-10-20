@@ -10,6 +10,7 @@ $(function () {
             allCateLogData(cateLogs);
             sortCateLogData(cateLogs);
             showArea(locs);
+            showSubClass(result.data.subClasses);
         }else {
             alert("系统繁忙,请稍后再试");
         }
@@ -21,7 +22,7 @@ $(function () {
                     .append(
                         $("<a>")
                             .addClass("nav-link")
-                            .attr("href","cate.html?cateId="+cate.id)
+                            .attr("href","cate.html?cateLog_id="+cate.id)
                             .text(cate.name)
                     )
             )
@@ -71,7 +72,17 @@ $(function () {
     }
     /*<a href="xl/1.html?cataLog_id=f39c979857a4874a0157a4a6a4fe0000&subClass_id=f39c979857a4874a0157a4a723560001">
         <li id="subClass_idf39c979857a4874a0157a4a723560001">动作片</li></a>*/
-    function showSubClass(subClass) {
-        
+    function showSubClass(subClasses) {
+        for (const subClass of subClasses) {
+            $("#sort-sub").append(
+                $("<a>")
+                    .attr("href","xl/l.html?cateLog_id="+subClass.id)
+                    .append(
+                        $("<li>")
+                            .attr("id","subClass_id"+subClass.id)
+                            .text(subClass.name)
+                    )
+            )
+        }
     }
 })
