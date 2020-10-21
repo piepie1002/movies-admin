@@ -19,7 +19,7 @@ public class ShowController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String id = req.getParameter("id");
+        //    String id = req.getParameter("id");
         String id = "f39c979857a4c8c50157a9020fb8001d";
 
         Film film = service.ShowFilm(id);

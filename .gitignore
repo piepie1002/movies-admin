@@ -7,3 +7,4 @@ src/main/resources
 target
 src/main/webapp/plugins
 src/main/webapp/WEB-INF
+src/test
