@@ -206,9 +206,13 @@
         <div class="col-sm-9">
             <div style="margin:0px auto;width:100%;"></div>
             <div class="search-box">
-                <form action="list.html" method="post">
+                <!--<form>
                     <input type="search" name="name" value="" autocomplete="off"
                            placeholder="请输入影片名称"/>
+                </form>-->
+                <form href="film.html">
+                    <input type="text" placeholder="请输入影片名称" value="" id="cha">
+                    <input type="button" id="btn" value="查找">
                 </form>
             </div>
             <div style="width:100%;margin: 3px auto;">
@@ -218,14 +222,7 @@
                 </ul>
             </div>
             <div style="width:80%;margin: 100px auto;height: auto;overflow: hidden;">
-                <!--
-
-                    需要修改 1 处地方
-
-                -->
-
                 <p style="text-align: center;">
-                    <!--1.修改-->
                     <script type="text/javascript">
                         function _change() {
                             var select = document.getElementById("select");

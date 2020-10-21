@@ -1,6 +1,10 @@
 package com.tact.movies.controller;
 
 import com.tact.movies.entity.Film;
+import com.tact.movies.service.ModifyService;
+import com.tact.movies.service.impl.ModifyServiceImpl;
+import com.tact.movies.utils.ListData;
+import com.tact.movies.utils.ResponseUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +15,11 @@ import java.io.IOException;
 
 @WebServlet("/modifyController")
 public class ModifyController extends HttpServlet {
+    ModifyService service = new ModifyServiceImpl();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         String id = req.getParameter("id");
         String name = req.getParameter("name");
         String img = req.getParameter("img");
@@ -24,6 +31,13 @@ public class ModifyController extends HttpServlet {
         String locName = req.getParameter("locName");
         String plot = req.getParameter("plot");
         Film film = new Film(id,actor,img,locName,name,onDecade,plot,resolution,status,typeName);
-
+        int i = service.ModifyData(film);
+        String str1 = "修改成功！";
+        String str2 = "修改失败！";
+        if(i>0){
+            ResponseUtils.responseToJson(resp,str1);
+        }else{
+            ResponseUtils.responseToJson(resp,str2);
+        }
     }
 }

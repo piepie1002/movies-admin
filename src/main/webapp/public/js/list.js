@@ -67,39 +67,42 @@ $(function () {
                 alert("网络繁忙，稍后再试！！！")
             }
         })
-    })
-});
+    });
 
     function showOneData(data) {
         $("#all-list")
             .append(
-                    $("<li>")
-                        .append(
-                            $("<a>")
-                                .attr("href","film.html?film_id="+data.id)
-                                .append(
-                                    $("<div>")
-                                        .attr("title",data.name)
-                                        .append(
-                                            $("<img>")
-                                                .attr("src",data.image)
-                                        )
-                                )
-                        )
-                        .append(
-                            $("<div class='film-info'>")
-                                .append(
-                                    $("<a>")
-                                        .attr("href","film.html?film_id="+data.id)
-                                        .attr("title",data.name)
-                                        .text(data.name)
-                                        .append(
-                                            $("<p>").text(data.onDecade + "-" + data.typeName)
-                                        )
-                                )
-                        )
+                $("<li>")
+                    .append(
+                        $("<a>")
+                            .attr("href","film.html?film_id="+data.id)
+                            .append(
+                                $("<div>")
+                                    .attr("title",data.name)
+                                    .append(
+                                        $("<img>")
+                                            .attr("src",data.image)
+                                    )
+                            )
+                    )
+                    .append(
+                        $("<div class='film-info'>")
+                            .append(
+                                $("<a>")
+                                    .attr("href","film.html?film_id="+data.id)
+                                    .attr("title",data.name)
+                                    .text(data.name)
+                                    .append(
+                                        $("<p>").text(data.onDecade + "-" + data.typeName)
+                                    )
+                            )
+                    )
             )
     }
+
+
+});
+
 
 
 

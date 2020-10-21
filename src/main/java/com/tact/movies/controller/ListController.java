@@ -19,7 +19,6 @@ import java.io.IOException;
 
 public class ListController extends HttpServlet {
     private ListService service = new ListServiceImpl();
-    ListService listService = new ListServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,7 +40,7 @@ public class ListController extends HttpServlet {
             case "find":
                 String name = req.getParameter("name");
 //                String name = "自杀小队";
-                Film filmData = listService.getFilmData(name);
+                Film filmData = service.getFilmData(name);
                 ResponseEntity<Film> responseEntity = null;
                 try{
                     responseEntity = ResponseEntity.success(filmData);

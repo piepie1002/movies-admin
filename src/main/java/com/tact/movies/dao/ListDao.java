@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ListDao {
     List<Film> selectAllFilmsList();
+
+    Film selectFilmsList(String name);
 }

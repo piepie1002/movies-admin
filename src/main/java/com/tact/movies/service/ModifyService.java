@@ -1,5 +1,8 @@
 package com.tact.movies.service;
 
-public interface ModifyService {
+import com.tact.movies.entity.Film;
 
+public interface ModifyService {
+    int ModifyData(Film film);
+    Film ShowFilm(String id);
 }
