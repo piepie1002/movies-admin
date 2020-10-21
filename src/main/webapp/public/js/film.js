@@ -7,7 +7,11 @@ $(function () {
     var id = url.substring(url.lastIndexOf('=')+1);
     alert(id)
 
-    $.get(FILM_URL,function (result) {
+    let param = {
+        id:id
+    }
+
+    $.get(FILM_URL,param,function (result) {
         if(result.status === 200){
             showData(result.data);
         }else {
@@ -17,7 +21,32 @@ $(function () {
 
     function showData(data) {
         $("#name").append(
-            $("<p>").text()
+            $("<p>").text(data.name)
+        )
+        $("#img").append(
+            $("<img>").attr("src",data.image)
+        )
+        $("#on-decade").append(
+            $("<p>").text(data.onDecade)
+        )
+        $("#status").append(
+            $("<p>").text(data.status)
+        )
+        $("#resolution").append(
+            $("<p>").text(data.resolution)
+        )
+        $("#type-name").append(
+            $("<p>").text(data.typeName)
+        )
+        $("#actor").append(
+            $("<p>").text(data.actor)
+        )
+        $("#loc-name").append(
+            $("<p>").text(data.locName)
+        )
+        $("#plot").append(
+            $("<span style='color: rgb(74, 74, 74); font-family: 微软雅黑; font-size: 12px; text-align: center; background-color: rgb(255, 255, 255);'>")
+                .text(data.plot)
         )
     }
 });
