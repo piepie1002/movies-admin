@@ -8,10 +8,6 @@ public class Type {
   private String name;
   private String subclassId;
 
-  public Type(String id, String name) {
-    this.id = id;
-    this.name = name;
-  }
 
   public String getId() {
     return id;
@@ -48,13 +44,4 @@ public class Type {
     this.subclassId = subclassId;
   }
 
-  @Override
-  public String toString() {
-    return "Type{" +
-            "id='" + id + '\'' +
-            ", isUse=" + isUse +
-            ", name='" + name + '\'' +
-            ", subclassId='" + subclassId + '\'' +
-            '}';
-  }
 }

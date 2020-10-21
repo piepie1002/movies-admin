@@ -12,7 +12,7 @@ public interface FilmDao {
     //查询所有Film类
     List<Film>selectFilmList();
     //查询分类
-    List<Film>selectCateLogName(String cateLogName,int start,int end);
+    List<Film>selectCateLogName(String cateLogName, int start, int end);
     //根据id获取详细信息
     Film selectFilmByID(String id);
     //获取总条数
