@@ -17,5 +17,6 @@ public interface FilmDao {
     Film selectFilmByID(String id);
     //获取总条数
     int getFilmCount();
+
     
 }
