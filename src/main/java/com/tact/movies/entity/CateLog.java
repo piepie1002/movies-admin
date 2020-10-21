@@ -1,7 +1,7 @@
 package com.tact.movies.entity;
 
 
-  public class CateLog {
+public class CateLog {
       private String id;
       private long isUse;
       private String name;
