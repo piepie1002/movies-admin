@@ -5,7 +5,6 @@ $(function () {
     var url = location.href;
     // alert(url);
     var id = url.substring(url.lastIndexOf('=')+1);
-    alert(id)
 
     let param = {
         id:id

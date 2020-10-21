@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("detail")
+@WebServlet("/detail")
 public class DetailController extends HttpServlet {
     DetailService detailService =new DetailServiceImpl();
 

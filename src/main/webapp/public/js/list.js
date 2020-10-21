@@ -59,8 +59,10 @@ $(function () {
         let param = {
             name:val,
             action:"find"
-        }
-        $.post(LIST_URL,param,function (result) {
+        };
+        // alert(val)
+        $.get(LIST_URL,param,function (result) {
+            alert(val)
             if(result.status === 200){
                 showOneData(result.data);
             }else{

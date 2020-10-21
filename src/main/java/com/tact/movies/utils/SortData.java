@@ -16,6 +16,7 @@ public class SortData {
     private List<Res>ress;
     private List<Decade> decades;
     private PageBean pageBean;
+    private List<Type> type;
 
     public SortData() {
     }
@@ -84,5 +85,13 @@ public class SortData {
 
     public void setPageBean(PageBean pageBean) {
         this.pageBean = pageBean;
+    }
+
+    public List<Type> getType() {
+        return type;
+    }
+
+    public void setType(List<Type> type) {
+        this.type = type;
     }
 }
