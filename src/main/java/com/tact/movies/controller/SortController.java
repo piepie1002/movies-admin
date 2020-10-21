@@ -3,6 +3,7 @@ package com.tact.movies.controller;
 import com.tact.movies.resp.ResponseEntity;
 import com.tact.movies.service.SortService;
 import com.tact.movies.service.impl.SortServiceImpl;
+import com.tact.movies.utils.PageBean;
 import com.tact.movies.utils.ResponseUtils;
 import com.tact.movies.utils.SortData;
 
@@ -22,7 +23,10 @@ public class SortController extends HttpServlet {
     private final SortService sortService = new SortServiceImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        SortData sortData = sortService.getSortDate();
+        //获取当前页
+        String curPage = req.getParameter("curPage");
+        PageBean pageBean = sortService.getPageBean("1");
+        SortData sortData = sortService.getSortDate(pageBean);
         ResponseEntity<SortData>entity;
         try {
             entity = ResponseEntity.success(sortData);
@@ -31,4 +35,5 @@ public class SortController extends HttpServlet {
         }
         ResponseUtils.responseToJson(resp,entity);
     }
+    
 }

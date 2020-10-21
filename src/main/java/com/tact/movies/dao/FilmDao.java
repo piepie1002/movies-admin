@@ -15,4 +15,7 @@ public interface FilmDao {
     List<Film>selectCateLogName(String cateLogName,int start,int end);
     //根据id获取详细信息
     Film selectFilmByID(String id);
+    //获取总条数
+    int getFilmCount();
+    
 }

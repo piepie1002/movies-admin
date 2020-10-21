@@ -12,22 +12,22 @@ public class SortData {
     private List<CateLog>cateLogs;
     private List<Film>films;
     private List<Loc>locs;
-    private List<Subclass>subClasses;
+    private List<SubClass>subClasses;
     private List<Res>ress;
     private List<Decade> decades;
-    private List<Film> filmList;
+    private PageBean pageBean;
 
     public SortData() {
     }
 
-    public SortData(List<CateLog> cateLogs, List<Film> films, List<Loc> locs, List<Subclass> subClasses, List<Res> ress, List<Decade> decades,List<Film> filmList) {
+    public SortData(List<CateLog> cateLogs, List<Film> films, List<Loc> locs, List<SubClass> subClasses, List<Res> ress, List<Decade> decades,PageBean pageBean) {
         this.cateLogs = cateLogs;
         this.films = films;
         this.locs = locs;
         this.subClasses = subClasses;
         this.ress = ress;
         this.decades = decades;
-        this.filmList = filmList;
+        this.pageBean = pageBean;
     }
 
     public List<CateLog> getCateLogs() {
@@ -54,11 +54,11 @@ public class SortData {
         this.locs = locs;
     }
 
-    public List<Subclass> getSubClasses() {
+    public List<SubClass> getSubClasses() {
         return subClasses;
     }
 
-    public void setSubClasses(List<Subclass> subClasses) {
+    public void setSubClasses(List<SubClass> subClasses) {
         this.subClasses = subClasses;
     }
 
@@ -78,11 +78,11 @@ public class SortData {
         this.decades = decades;
     }
 
-    public List<Film> getFilmList() {
-        return filmList;
+    public PageBean getPageBean() {
+        return pageBean;
     }
 
-    public void setFilmList(List<Film> filmList) {
-        this.filmList = filmList;
+    public void setPageBean(PageBean pageBean) {
+        this.pageBean = pageBean;
     }
 }

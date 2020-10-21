@@ -1,5 +1,6 @@
 package com.tact.movies.service;
 
+import com.tact.movies.utils.PageBean;
 import com.tact.movies.utils.SortData;
 
 /**
@@ -7,5 +8,6 @@ import com.tact.movies.utils.SortData;
  * @since JDK 1.8
  */
 public interface SortService {
-    SortData getSortDate();
+    SortData getSortDate(PageBean pageBean);
+    PageBean getPageBean(String curPage);
 }

@@ -1,7 +1,7 @@
 package com.tact.movies.dao;
 
 
-import com.tact.movies.entity.Subclass;
+import com.tact.movies.entity.SubClass;
 
 import java.util.List;
 
@@ -10,5 +10,5 @@ import java.util.List;
  * @since JDK 1.8
  */
 public interface SubClassDao {
-     List<Subclass>selectSubClassList();
+     List<SubClass>selectSubClassList();
 }

@@ -1,7 +1,7 @@
 package com.tact.movies.dao.impl;
 
 import com.tact.movies.dao.SubClassDao;
-import com.tact.movies.entity.Subclass;
+import com.tact.movies.entity.SubClass;
 import com.tact.movies.utils.DbManager;
 
 import java.sql.Connection;
@@ -17,12 +17,12 @@ import java.util.List;
  */
 public class SubClassDaoImpl implements SubClassDao {
     @Override
-    public List<Subclass> selectSubClassList() {
+    public List<SubClass> selectSubClassList() {
         String sql = "select id,is_use,name,catalog_id from t_subclass";
         Connection conn = null;
         ResultSet rSet = null;
         PreparedStatement ps = null;
-        List<Subclass>list = null;
+        List<SubClass>list = null;
         try {
             conn = DbManager.getInstance().getConn();
             ps = conn.prepareStatement(sql);
@@ -33,7 +33,7 @@ public class SubClassDaoImpl implements SubClassDao {
                 int isUse = rSet.getInt(2);
                 String name = rSet.getString(3);
                 String catalogId = rSet.getString(4);
-                Subclass subclass = new Subclass(id, isUse, name, catalogId);
+                SubClass subclass = new SubClass(id, isUse, name, catalogId);
                 list.add(subclass);
             }
         } catch (SQLException e) {

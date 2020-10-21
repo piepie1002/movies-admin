@@ -159,4 +159,26 @@ public class FilmDaoImpl implements FilmDao {
         }
         return film;
     }
+
+    @Override
+    public int getFilmCount() {
+        String sql = "select count(*) from t_film where isUse=1";
+        Connection conn = null;
+        ResultSet rSet = null;
+        PreparedStatement ps = null;
+        int count = 0;
+        try {
+            conn = DbManager.getInstance().getConn();
+            ps = conn.prepareStatement(sql);
+            rSet = ps.executeQuery();
+            while (rSet.next()){
+                count = rSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DbManager.closeAll(rSet,conn,ps);
+        }
+        return count;
+    }
 }

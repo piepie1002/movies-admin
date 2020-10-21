@@ -1,14 +1,14 @@
 package com.tact.movies.entity;
 
 
-public class Subclass {
+public class SubClass {
 
   private String id;
   private long isUse;
   private String name;
   private String catalogId;
 
-  public Subclass(String id, long isUse, String name, String catalogId) {
+  public SubClass(String id, long isUse, String name, String catalogId) {
     this.id = id;
     this.isUse = isUse;
     this.name = name;

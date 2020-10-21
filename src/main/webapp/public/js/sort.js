@@ -6,12 +6,14 @@ $(function () {
         if (result.status ===200){
             var cateLogs = result.data.cateLogs;
             var locs = result.data.locs;
+            var dataList = result.data.pageBean.dataList;
             showCateLogData(cateLogs);
             allCateLogData(cateLogs);
             sortCateLogData(cateLogs);
             showArea(locs);
             showSubClass(result.data.subClasses);
             showDecade(result.data.decades);
+            showSortFilm(dataList);
         }else {
             alert("系统繁忙,请稍后再试");
         }
@@ -98,6 +100,109 @@ $(function () {
                             .attr("id","onDecade"+decade.name)
                             .text(decade.name)
                     )
+            )
+        }
+    }
+    /*<li>
+        1.<a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d">
+            1.1<div  class="note-left" title="肖申克的救赎">
+            <img class="lazy rounded img-fluids" data-original="public/static/upload/filmPic/1476009214377.jpg" />
+            </div>
+        </a>
+        2.<div class="film-info">
+            2.1<div class="info">
+                <h2>
+                    <a class="film-info-a" href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d"
+                       title="肖申克的救赎"
+                       target="_blank">肖申克的救赎</a>
+                     <em> 1994</em>
+                </h2>
+                <em class="star star4"></em>
+                <p>主演： 蒂姆·罗宾斯 Tim Robbins   摩根·弗里曼 Morgan Freeman </p>
+                <p><i>状态：全集</i>&nbsp;<i>地区：美国</i></p>
+                <p><i>类型：犯罪片</i><i>更新：05-11</i></p>
+                <p></p>
+                <span>
+                    <a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d#kan" class="watch-btn" target="_blank">观看</a>
+                    <a href="xl/detail.html?film_id=f39c979857a4c8c50157a9020fb8001d#down" class="download-btn" target="_blank">下载</a>
+                </span>
+            </div>
+        </div>
+    </li>*/
+    function showSortFilm(dataList) {
+        for (const sortData of dataList) {
+            $("#sort-films").append(
+                $("<li>").append(
+                    $("<a>")
+                        .attr("href","xl/detail.html?film_id="+sortData.id)
+                        .append(
+                            $("<div class='note-left' >")
+                                .attr("title",sortData.name)
+                                .append(
+                                    $("<img class='lazy rounded img-fluids'>")
+                                        .attr("data-original",BASE_IMG_URL+sortData.image)
+                                        .attr("src",BASE_IMG_URL + sortData.image)
+                                )
+                            
+                        )
+                    
+                )
+                .append(
+                    $("<div class='film-info'>").append(
+                        $("<div class='info'>")
+                            .append(
+                            $("<h2>")
+                                .append(
+                                    $("<a class='film-info-a'>")
+                                        .attr("href","xl/detail.html?film_id="+sortData.id)
+                                        .attr("title",sortData.name)
+                                        .attr("target","_blank")
+                                        .text(sortData.name)
+                                )
+                                .append(
+                                    $("<em>").attr("text",sortData.onDecade)
+                                )
+                        )
+                            .append($("<em class='star star4'>"))
+                            .append(
+                                $("<p>").text("主演:"+sortData.actor)
+                            )
+                            .append(
+                                $("<p>").append(
+                                    $("<i>").text("状态:"+sortData.status)
+                                )
+                                    .append(
+                                        $("<i>").text("地区:"+sortData.locName)
+                                    )
+                            )
+                            .append(
+                                $("<p>").append(
+                                    $("<i>").text("类型:"+sortData.typeName)
+
+                                )
+                                    .append(
+                                        $("<i>").text("更新:")
+                                    )
+                                )
+                            .append(
+                                $("<p>")
+                            )
+                            .append(
+                                $("<span>")
+                                    .append(
+                                    $("<a class='watch-btn' target='_blank'>")
+                                        .attr("href","xl/detail.html?film_id="+sortData.id+"#kan")
+                                        .text("观看")
+                                    
+                                )
+                                    .append(
+                                        $("<a class='download-btn' target='_blank'>")
+                                            .attr("href","xl/detail.html?film_id="+sortData.id+"#down")
+                                            .text("下载")
+                                    )
+                            )
+                    )
+                )
             )
         }
     }
