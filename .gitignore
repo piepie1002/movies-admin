@@ -3,8 +3,7 @@ pom.xml
 .gitignore
 movies-admin.iml
 src/main/resources
-.idea/dataSources/230a8e83-88a1-43a5-8f20-3b4f1934f816.xml
-.idea/dataSources/230a8e83-88a1-43a5-8f20-3b4f1934f816/
+.idea/
 target
 src/main/webapp/plugins
 src/main/webapp/WEB-INF
