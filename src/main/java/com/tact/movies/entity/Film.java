@@ -237,16 +237,4 @@ public class Film {
     this.isVip = isVip;
   }
 
-  public Film(String id,String actor, String image, String locName, String name, String onDecade, String plot, String resolution, String status, String typeName) {
-    this.id = id;
-    this.actor = actor;
-    this.image = image;
-    this.locName = locName;
-    this.name = name;
-    this.onDecade = onDecade;
-    this.plot = plot;
-    this.resolution = resolution;
-    this.status = status;
-    this.typeName = typeName;
-  }
 }

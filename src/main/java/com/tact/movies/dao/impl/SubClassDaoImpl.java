@@ -1,7 +1,7 @@
 package com.tact.movies.dao.impl;
 
-import com.tact.movies.dao.CateLogDao;
-import com.tact.movies.entity.CateLog;
+import com.tact.movies.dao.SubClassDao;
+import com.tact.movies.entity.SubClass;
 import com.tact.movies.utils.DbManager;
 
 import java.sql.Connection;
@@ -15,14 +15,14 @@ import java.util.List;
  * @author LIN
  * @since JDK 1.8
  */
-public class CateLogDaoImpl implements CateLogDao {
+public class SubClassDaoImpl implements SubClassDao {
     @Override
-    public List<CateLog> selectCateLogList() {
-        String sql = "select id,name from t_catelog";
+    public List<SubClass> selectSubClassList() {
+        String sql = "select id,is_use,name,catalog_id from t_subclass";
         Connection conn = null;
-        PreparedStatement ps = null;
         ResultSet rSet = null;
-        List<CateLog>list = null;
+        PreparedStatement ps = null;
+        List<SubClass>list = null;
         try {
             conn = DbManager.getInstance().getConn();
             ps = conn.prepareStatement(sql);
@@ -30,14 +30,16 @@ public class CateLogDaoImpl implements CateLogDao {
             list = new ArrayList<>();
             while (rSet.next()){
                 String id = rSet.getString(1);
-                String name = rSet.getString(2);
-                CateLog cateLog = new CateLog(id, name);
-                list.add(cateLog);
+                int isUse = rSet.getInt(2);
+                String name = rSet.getString(3);
+                String catalogId = rSet.getString(4);
+                SubClass subclass = new SubClass(id, isUse, name, catalogId);
+                list.add(subclass);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
-            DbManager.closeAll(rSet,ps,conn);
+            DbManager.closeAll(rSet,conn,ps);
         }
         return list;
     }
