@@ -1,6 +1,7 @@
 package com.tact.movies.dao.impl;
 
 import com.tact.movies.dao.DecadeDao;
+import com.tact.movies.entity.CateLog;
 import com.tact.movies.entity.Decade;
 import com.tact.movies.utils.DbManager;
 
@@ -49,5 +50,40 @@ public class DecadeDaoImpl implements DecadeDao {
             DbManager.closeAll(rSet,conn,ps);
         }
         return list;
+    }
+
+    //根据name获取年代
+    @Override
+    public Decade selectDecade(String decadeName) {
+        String sql = "select id,name from t_decade where name = ? and is_use = 1";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rSet = null;
+        Decade decade = null;
+        try {
+            conn = DbManager.getInstance().getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,decadeName);
+            rSet = ps.executeQuery();
+            if (rSet.next()){
+                String id = rSet.getString("id");
+                String name = rSet.getString("name");
+                decade = new Decade(id, name);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DbManager.closeAll(rSet,ps,conn);
+        }
+        return decade;
+    }
+
+    //添加年代
+    @Override
+    public int insertDecade(Decade decade) {
+        int count = 0;
+        String sql = "insert into t_decade(id,name,is_use) value(?,?,?);";
+        count = DbManager.commonUpdate(sql, decade.getId(),decade.getName(),decade.getIsUse());
+        return count;
     }
 }

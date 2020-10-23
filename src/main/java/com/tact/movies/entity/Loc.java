@@ -7,6 +7,11 @@ public class Loc {
   private long isUse;
   private String name;
 
+  public Loc(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
   public Loc(String id, long isUse, String name) {
     this.id = id;
     this.isUse = isUse;
@@ -39,4 +44,12 @@ public class Loc {
     this.name = name;
   }
 
+  @Override
+  public String toString() {
+    return "Loc{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            '}';
+  }
 }

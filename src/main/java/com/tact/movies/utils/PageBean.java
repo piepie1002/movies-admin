@@ -22,9 +22,9 @@ public class PageBean<T> {
     public PageBean(List<T> dataList, int firstPage, int prePage, int curPage, int nextPage, int totalPage, int count, int pageSize) {
         this.dataList = dataList;
         this.firstPage = firstPage;
-        this.prePage = prePage;
+        this.prePage = curPage>1?curPage-1:curPage;
         this.curPage = curPage;
-        this.nextPage = nextPage;
+        this.nextPage = curPage<totalPage?curPage+1:totalPage;
         this.totalPage = count%pageSize ==0?count/pageSize:count/pageSize+1;
         this.count = count;
         this.pageSize = pageSize;
@@ -48,7 +48,12 @@ public class PageBean<T> {
     }
 
     public void setPrePage(int prePage) {
-        this.prePage = prePage;
+        if (curPage>1){
+            this.prePage = curPage-1;
+        }else {
+            this.prePage = curPage ;
+        }
+        
     }
 
     public int getCurPage() {
@@ -57,14 +62,20 @@ public class PageBean<T> {
 
     public void setCurPage(int curPage) {
         this.curPage = curPage;
+        this.prePage = curPage>1?curPage-1:curPage;
+        
     }
 
     public int getNextPage() {
         return nextPage;
     }
 
-    public void setNextPage(int nextPage) {
-        this.nextPage = nextPage;
+    public void setNextPage(int curPage) {
+        if (curPage<totalPage){
+            this.nextPage = curPage+1;
+        }else {
+            this.nextPage=totalPage;
+        }
     }
 
     public int getTotalPage() {
@@ -84,6 +95,7 @@ public class PageBean<T> {
         //设置总页数
         if (this.pageSize>0 && count>0){
             this.totalPage = count%pageSize==0?count/pageSize:count/pageSize+1;
+            this.nextPage = curPage<totalPage?curPage+1:totalPage;
         }
     }
 

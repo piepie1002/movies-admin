@@ -1,7 +1,8 @@
 package com.tact.movies.dao.impl;
 
-import com.tact.movies.dao.CateLogDao;
-import com.tact.movies.entity.CateLog;
+import com.tact.movies.dao.TypeDao;
+import com.tact.movies.entity.SubClass;
+import com.tact.movies.entity.Type;
 import com.tact.movies.utils.DbManager;
 
 import java.sql.Connection;
@@ -11,28 +12,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author LIN
- * @since JDK 1.8
- */
-public class CateLogDaoImpl implements CateLogDao {
+public class TypeDaoImpl implements TypeDao {
+    //查询二级目录对应所有三级目录
     @Override
-    public List<CateLog> selectCateLogList() {
-        String sql = "select id,name from t_catelog where is_use = 1";
+    public List<Type> selectTypeList(String subClassId) {
+        String sql = "select id,name from t_type where subclass_id = ? and is_use = 1";
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rSet = null;
-        List<CateLog>list = null;
+        List<Type> list = new ArrayList<>();
         try {
             conn = DbManager.getInstance().getConn();
             ps = conn.prepareStatement(sql);
+            ps.setString(1,subClassId);
             rSet = ps.executeQuery();
-            list = new ArrayList<>();
             while (rSet.next()){
-                String id = rSet.getString(1);
-                String name = rSet.getString(2);
-                CateLog cateLog = new CateLog(id, name);
-                list.add(cateLog);
+                String id = rSet.getString("id");
+                String name = rSet.getString("name");
+                Type type = new Type(id,name);
+                list.add(type);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,38 +40,38 @@ public class CateLogDaoImpl implements CateLogDao {
         return list;
     }
 
-    //根据name获取指定一级目录
+    //根据name获取指定三级目录
     @Override
-    public CateLog selectCateLog(String cateLogName) {
-        String sql = "select id,name from t_catelog where name = ? and is_use = 1";
+    public Type selectType(String typeName) {
+        String sql = "select id,name from t_type where name = ? and is_use = 1";
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rSet = null;
-        CateLog cateLog = null;
+        Type type = null;
         try {
             conn = DbManager.getInstance().getConn();
             ps = conn.prepareStatement(sql);
-            ps.setString(1,cateLogName);
+            ps.setString(1,typeName);
             rSet = ps.executeQuery();
             if (rSet.next()){
                 String id = rSet.getString("id");
                 String name = rSet.getString("name");
-                cateLog = new CateLog(id, name);
+                type = new Type(id, name);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
             DbManager.closeAll(rSet,ps,conn);
         }
-        return cateLog;
+        return type;
     }
 
-    //添加一级目录
+    //添加三级目录
     @Override
-    public int insertCateLog(CateLog cateLog) {
+    public int insertType(Type type) {
         int count = 0;
-        String sql = "insert into t_catelog(id,name,is_use) value(?,?,?);";
-        count = DbManager.commonUpdate(sql, cateLog.getId(),cateLog.getName(),cateLog.getIsUse());
+        String sql = "insert into t_type(id,name,is_use,subclass_id) value(?,?,?,?);";
+        count = DbManager.commonUpdate(sql, type.getId(),type.getName(),type.getIsUse(),type.getSubclassId());
         return count;
     }
 }

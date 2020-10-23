@@ -35,19 +35,15 @@ public class ListController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
-        switch (action){
-            case "find":
-                String name = req.getParameter("name");
+        String name = req.getParameter("name");
 //                String name = "自杀小队";
-                Film filmData = service.getFilmData(name);
-                ResponseEntity<Film> responseEntity = null;
-                try{
-                    responseEntity = ResponseEntity.success(filmData);
-                }catch (Exception e){
-                    responseEntity = ResponseEntity.error();
-                }
-                ResponseUtils.responseToJson(resp,responseEntity);
+        Film filmData = service.getFilmData(name);
+        ResponseEntity<Film> responseEntity = null;
+        try{
+            responseEntity = ResponseEntity.success(filmData);
+        }catch (Exception e){
+            responseEntity = ResponseEntity.error();
         }
+        ResponseUtils.responseToJson(resp,responseEntity);
     }
 }

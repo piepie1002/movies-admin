@@ -8,6 +8,11 @@ public class Decade {
   private String name;
   private long sort;
 
+  public Decade(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
   public Decade(String id, long isUse, String name) {
     this.id = id;
     this.isUse = isUse;
@@ -49,4 +54,20 @@ public class Decade {
     this.sort = sort;
   }
 
+  public Decade(String id, long isUse, String name, long sort) {
+    this.id = id;
+    this.isUse = isUse;
+    this.name = name;
+    this.sort = sort;
+  }
+
+  @Override
+  public String toString() {
+    return "Decade{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            ", sort=" + sort +
+            '}';
+  }
 }

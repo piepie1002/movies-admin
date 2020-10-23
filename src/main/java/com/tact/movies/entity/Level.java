@@ -7,6 +7,16 @@ public class Level {
   private long isUse;
   private String name;
 
+  public Level(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public Level(String id, long isUse, String name) {
+    this.id = id;
+    this.isUse = isUse;
+    this.name = name;
+  }
 
   public String getId() {
     return id;
@@ -34,4 +44,12 @@ public class Level {
     this.name = name;
   }
 
+  @Override
+  public String toString() {
+    return "Level{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            '}';
+  }
 }

@@ -8,6 +8,17 @@ public class Type {
   private String name;
   private String subclassId;
 
+  public Type(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public Type(String id, long isUse, String name, String subclassId) {
+    this.id = id;
+    this.isUse = isUse;
+    this.name = name;
+    this.subclassId = subclassId;
+  }
 
   public String getId() {
     return id;
@@ -44,4 +55,13 @@ public class Type {
     this.subclassId = subclassId;
   }
 
+  @Override
+  public String toString() {
+    return "Type{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            ", subclassId='" + subclassId + '\'' +
+            '}';
+  }
 }

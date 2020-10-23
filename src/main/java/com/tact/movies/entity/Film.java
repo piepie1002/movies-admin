@@ -237,7 +237,7 @@ public class Film {
     this.isVip = isVip;
   }
 
-  public Film(String id,String actor, String image, String locName, String name, String onDecade, String plot, String resolution, String status, String typeName) {
+  public Film(String id,String actor, String image, String locName, String name, String onDecade, String plot, String resolution, String status, String cateLogName,String subClassName,String typeName) {
     this.id = id;
     this.actor = actor;
     this.image = image;
@@ -247,6 +247,34 @@ public class Film {
     this.plot = plot;
     this.resolution = resolution;
     this.status = status;
+    this.cateLogName = cateLogName;
+    this.subClassName = subClassName;
     this.typeName = typeName;
+  }
+
+  @Override
+  public String toString() {
+    return "Film{" +
+            "id='" + id + '\'' +
+            ", actor='" + actor + '\'' +
+            ", cateLogName='" + cateLogName + '\'' +
+            ", cateLogId='" + cateLogId + '\'' +
+            ", evaluation=" + evaluation +
+            ", image='" + image + '\'' +
+            ", isUse=" + isUse +
+            ", locName='" + locName + '\'' +
+            ", locId='" + locId + '\'' +
+            ", name='" + name + '\'' +
+            ", onDecade='" + onDecade + '\'' +
+            ", plot='" + plot + '\'' +
+            ", resolution='" + resolution + '\'' +
+            ", status='" + status + '\'' +
+            ", subClassName='" + subClassName + '\'' +
+            ", subClassId='" + subClassId + '\'' +
+            ", typeName='" + typeName + '\'' +
+            ", typeId='" + typeId + '\'' +
+            ", updateTime='" + updateTime + '\'' +
+            ", isVip=" + isVip +
+            '}';
   }
 }

@@ -9,6 +9,8 @@ $(function () {
     let param = {
         id:id
     }
+    //将id携带给下一个页面
+    $("#send").attr("href","modify-film.html?film_id="+id)
 
     $.get(FILM_URL,param,function (result) {
         if(result.status === 200){

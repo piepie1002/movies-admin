@@ -5,6 +5,7 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 import javax.sql.DataSource;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -53,6 +54,51 @@ public class DbManager {
         return conn;
     }
 
+
+    //更新数据库
+    public static Integer commonUpdate(String sql,Object ... obj){
+        Connection connection = null;
+        PreparedStatement ps = null;
+        int rSet = 0;
+        try {
+            connection = DbManager.getInstance().getConn();
+            ps = connection.prepareStatement(sql);
+            //给占位符赋值
+            for (int i = 0;i < obj.length;i++){
+                ps.setObject(i+1,obj[i]);
+            }
+            //执行sql语句返回影响行数
+            rSet = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DbManager.closeAll(ps,connection);
+        }
+        return rSet;
+    }
+
+    //封装的方法无法释放资源，待解决
+    /*//数据库查询
+    public static ResultSet commonQuery(String sql,Object ... obj){
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rSet = null;
+        try {
+            connection = DbManager.getConn();
+            ps = connection.prepareStatement(sql);
+            //给占位符赋值
+            for (int i = 0;i < obj.length;i++){
+                ps.setObject(i+1,obj[i]);
+            }
+            rSet = ps.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(rSet,ps,connection);
+        }
+        return rSet;
+    }*/
 
     //释放资源的方法
     public static void closeAll(AutoCloseable...closeables){

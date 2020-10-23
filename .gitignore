@@ -2,9 +2,11 @@
 pom.xml
 .gitignore
 movies-admin.iml
-src/main/resources
 .idea/
 target
 src/main/webapp/plugins
 src/main/webapp/WEB-INF
 src/test
+src/main/java/com/tact/movies/controller/FindController.java
+src/main/webapp/public/static/upload/filmFile/
+

@@ -7,6 +7,7 @@ $(function () {
             var cateLogs = result.data.cateLogs;
             var locs = result.data.locs;
             var dataList = result.data.pageBean.dataList;
+            var bean = result.data.pageBean;
             showCateLogData(cateLogs);
             allCateLogData(cateLogs);
             sortCateLogData(cateLogs);
@@ -14,6 +15,7 @@ $(function () {
             showSubClass(result.data.subClasses);
             showDecade(result.data.decades);
             showSortFilm(dataList);
+            sortPage(dataList,bean);
         }else {
             alert("系统繁忙,请稍后再试");
         }
@@ -206,4 +208,61 @@ $(function () {
             )
         }
     }
+    /*<p style="text-align: right;">
+        <!--1.修改-->
+        <script type="text/javascript">
+            function _change() {
+            var select = document.getElementById("select");
+            location = "xl/1.html?&pc=" + select.value;
+        }
+        </script>
+        第1页/共3页
+        <a href="javascript:;" class="nouse-btn">首页</a>&nbsp;
+        <a href="javascript:;" class="nouse-btn">上一页</a>
+        <a href="javascript:;" class="nouse-btn">1</a>
+        <a href="xl/1.html?&pc=2" class="use-btn">2</a>
+        <a href="xl/1.html?&pc=3" class="use-btn">3</a>
+        <a href="xl/1.html?&pc=2" class="use-btn">下一页</a>&nbsp;
+        <a href="xl/1.html?&pc=3" class="use-btn">尾页</a>
+        总共46部
+    </p>*/
+    function sortPage(dataList,bean) {
+        $("#sort-page")
+                .text("第"+bean.curPage+"页/共"+bean.totalPage+"页")
+                .append(
+                    $("<a class='nouse-btn' href='javascript:;'>")
+                        .text("首页")
+                )
+                .append(
+                    $("<a class='nouse-btn'>")
+                        .attr("href","/sort.html?&curPage="+bean.prePage)
+                        .text("上一页")
+                )
+        for (let i = 1; i < bean.totalPage+1; i++) {
+            if (i==1){
+                $("#sort-page").append(
+                    $("<a class='nouse-btn'>")
+                        .text(i)
+                        .attr("href","javascript:;")
+                )
+            }else {
+                $("#sort-page").append(
+                    $("<a class='use-btn'>")
+                        .text(i)
+                        .attr("href","/sort.html?&curPage="+i)
+                )
+            }
+        }
+        $("#sort-page").append(
+            $("<a class='use-btn'>")
+                .attr("href","/sort.html?&curPage="+bean.curPage+1)
+                .text("下一页")
+        )
+            .append(
+                $("<a class='use-btn'>")
+                    .attr("href","/sort.html?&curPage="+bean.totalPage)
+                    .text("尾页")
+            )
+    }
+    
 })

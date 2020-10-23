@@ -9,5 +9,11 @@ import java.util.List;
  * @since JDK 1.8
  */
 public interface CateLogDao {
-    List<CateLog>selectCateLogList();
+    List<CateLog> selectCateLogList();
+
+    //根据name获取指定一级目录
+    CateLog selectCateLog(String cateLogName);
+
+    //添加一级目录
+    int insertCateLog(CateLog cateLog);
 }

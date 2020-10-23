@@ -1,6 +1,7 @@
 package com.tact.movies.dao.impl;
 
 import com.tact.movies.dao.LocDao;
+import com.tact.movies.entity.CateLog;
 import com.tact.movies.entity.Loc;
 import com.tact.movies.utils.DbManager;
 
@@ -41,5 +42,40 @@ public class LocDaoImpl implements LocDao {
             DbManager.closeAll(rSet,conn,ps);
         }
         return list;
+    }
+
+    //根据name获取地区
+    @Override
+    public Loc selectLoc(String locName) {
+        String sql = "select id,name from t_loc where name = ? and is_use = 1";
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rSet = null;
+        Loc loc = null;
+        try {
+            conn = DbManager.getInstance().getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,locName);
+            rSet = ps.executeQuery();
+            if (rSet.next()){
+                String id = rSet.getString("id");
+                String name = rSet.getString("name");
+                loc = new Loc(id, name);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DbManager.closeAll(rSet,ps,conn);
+        }
+        return loc;
+    }
+
+    //添加地区
+    @Override
+    public int insertLoc(Loc loc) {
+        int count = 0;
+        String sql = "insert into t_loc(id,name,is_use) value(?,?,?);";
+        count = DbManager.commonUpdate(sql, loc.getId(),loc.getName(),loc.getIsUse());
+        return count;
     }
 }

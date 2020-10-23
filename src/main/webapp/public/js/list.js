@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:8080/api"
 const LIST_URL = BASE_URL+"/list"
 
 $(function () {
+    $("#all-list").find("li").remove();
     $.get(LIST_URL,function (result) {
         if(result.status === 200){
             showAllData(result.data.films);
@@ -55,35 +56,35 @@ $(function () {
     }
 
     $("#btn").click(function () {
-        let val = $("#cha").val();
+        $("#all-list").find("li").remove();
+
+        var val = $("#cha").val();
         let param = {
-            name:val,
-            action:"find"
+            name:val
         };
         // alert(val)
-        $.get(LIST_URL,param,function (result) {
-            alert(val)
+        $.post(LIST_URL,param,function (result) {
             if(result.status === 200){
                 showOneData(result.data);
             }else{
                 alert("网络繁忙，稍后再试！！！")
             }
         })
-    });
+    })
 
-    function showOneData(data) {
+    function showOneData(film) {
         $("#all-list")
             .append(
                 $("<li>")
                     .append(
                         $("<a>")
-                            .attr("href","film.html?film_id="+data.id)
+                            .attr("href", "film.html?film_id=" + film.id)
                             .append(
                                 $("<div>")
-                                    .attr("title",data.name)
+                                    .attr("title", film.name)
                                     .append(
                                         $("<img>")
-                                            .attr("src",data.image)
+                                            .attr("src", film.image)
                                     )
                             )
                     )
@@ -91,19 +92,18 @@ $(function () {
                         $("<div class='film-info'>")
                             .append(
                                 $("<a>")
-                                    .attr("href","film.html?film_id="+data.id)
-                                    .attr("title",data.name)
-                                    .text(data.name)
+                                    .attr("href", "film.html?film_id=" + film.id)
+                                    .attr("title", film.name)
+                                    .text(film.name)
                                     .append(
-                                        $("<p>").text(data.onDecade + "-" + data.typeName)
+                                        $("<p>").text(film.onDecade + "-" + film.typeName)
                                     )
                             )
                     )
             )
     }
-
-
 });
+
 
 
 

@@ -1,8 +1,6 @@
 package com.tact.movies.service;
 
-import com.tact.movies.entity.Decade;
-import com.tact.movies.entity.Film;
-import com.tact.movies.entity.Loc;
+import com.tact.movies.entity.*;
 
 import java.util.List;
 
@@ -11,4 +9,5 @@ public interface ModifyService {
     Film ShowFilm(String id);
     List<Decade> ShowDecade();
     List<Loc> ShowLoc();
+    List<CateLog> ShowCateLog();
 }

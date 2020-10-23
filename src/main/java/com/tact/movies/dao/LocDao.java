@@ -10,4 +10,10 @@ import java.util.List;
  */
 public interface LocDao {
     List<Loc>selectLocList();
+
+    //根据name获取地区
+    Loc selectLoc(String locName);
+
+    //添加地区
+    int insertLoc(Loc loc);
 }

@@ -181,4 +181,15 @@ public class FilmDaoImpl implements FilmDao {
         }
         return count;
     }
+
+    @Override
+    public int insertFilm(Film film) {
+        String sql;
+        int count = 0;
+        sql = "insert into t_film(" +
+                "id,name,image,on_dacade,status,resolution,type_id," +
+                "actor,loc_name,loc_id,plot,is_vip,isUse) value(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        count = DbManager.commonUpdate(sql);
+        return count;
+    }
 }

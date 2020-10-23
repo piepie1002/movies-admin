@@ -1,13 +1,8 @@
 package com.tact.movies.service.impl;
 
-import com.tact.movies.dao.DecadeDao;
-import com.tact.movies.dao.FilmDao;
-import com.tact.movies.dao.LocDao;
-import com.tact.movies.dao.ModifyDao;
-import com.tact.movies.dao.impl.DecadeDaoImpl;
-import com.tact.movies.dao.impl.FilmDaoImpl;
-import com.tact.movies.dao.impl.LocDaoImpl;
-import com.tact.movies.dao.impl.ModifyDaoImpl;
+import com.tact.movies.dao.*;
+import com.tact.movies.dao.impl.*;
+import com.tact.movies.entity.CateLog;
 import com.tact.movies.entity.Decade;
 import com.tact.movies.entity.Film;
 import com.tact.movies.entity.Loc;
@@ -21,6 +16,7 @@ public class ModifyServiceImpl implements ModifyService {
     FilmDao filmDao = new FilmDaoImpl();
     DecadeDao decadeDao = new DecadeDaoImpl();
     LocDao locDao = new LocDaoImpl();
+    CateLogDao cateLogDao = new CateLogDaoImpl();
     @Override
     public int ModifyData(Film film) {
         int i = modifyDao.modifyData(film);
@@ -43,5 +39,11 @@ public class ModifyServiceImpl implements ModifyService {
     public List<Loc> ShowLoc() {
         List<Loc> locsList = locDao.selectLocList();
         return locsList;
+    }
+
+    @Override
+    public List<CateLog> ShowCateLog() {
+        List<CateLog> cateLogs = cateLogDao.selectCateLogList();
+        return cateLogs;
     }
 }

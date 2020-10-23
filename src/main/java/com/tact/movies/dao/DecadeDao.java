@@ -10,4 +10,10 @@ import java.util.List;
  */
 public interface DecadeDao {
     List<Decade>selectDecadeList();
+
+    //根据name获取年代
+    Decade selectDecade(String decadeName);
+
+    //添加年代
+    int insertDecade(Decade decade);
 }

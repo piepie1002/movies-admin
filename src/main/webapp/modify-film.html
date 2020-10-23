@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>影片详情</title>
+    <title>修改影片</title>
 
     <meta name="pragma" content="no-cache">
     <meta name="cache-control" content="no-cache">
@@ -42,7 +42,7 @@
     <!--=====================JS_Link===========================-->
     <script type="text/javascript" src="plugins/uploadify/jquery.uploadify.min.js"></script>
 
-
+    <script src="public/js/modify-film.js"></script>
     <style>
 
         * {
@@ -293,7 +293,6 @@
 
         /*导航*/
     </style>
-    <script src="public/js/film.js"></script>
 
 </head>
 <body>
@@ -331,8 +330,8 @@
             <div style="width:100%; height: auto;overflow:hidden;margin: 0px auto;">
                 <ul class="film-info">
                     <li class="title">
-                        <div class="left-con">影片信息</div>
-                        <div class="right-con"><a id="send">更改信息</a></div>
+                        <div class="left-con">修改影片</div>
+                        <div class="right-con"><input type="button" value="确认修改" id="btn"></div>
                     </li>
 
 
@@ -340,7 +339,9 @@
                         <div class="left-con">片名:</div>
                         <div class="right-con">
                             <div class="update">
-                                <div class="label" id="name"></div>
+                                <div class="label">
+                                    <input type="text" value="" placeholder="请输入影片名称" id="name">
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -352,7 +353,12 @@
                             <div class="update">
                                 <div class="label">
                                     <div class="update-pre">
-                                        <div id="img"></div>
+                                        <div>
+                                            <form action="UploadController" method="post" enctype="multipart/form-data">
+                                                <input type="file" id="img" name="file"><br>
+                                                <input type="submit" value="上传">
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -364,8 +370,10 @@
                         <div class="right-con">
 
                             <div class="update">
-                                <div class="label" id="on-decade">
+                                <div class="label">
+                                    <select  id="on-decade">
 
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -376,8 +384,8 @@
                         <div class="left-con">状态:</div>
                         <div class="right-con">
                             <div class="update">
-                                <div class="label" id="status">
-
+                                <div class="label">
+                                    <input type="text" value="" placeholder="请输入影片状态" id="status">
                                 </div>
                             </div>
                         </div>
@@ -389,7 +397,11 @@
                         <div class="right-con">
                             <div class="update">
                                 <div class="label" id="resolution">
-
+                                    <select>
+                                        <option>1080</option>
+                                        <option>720</option>
+                                        <option>480</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -400,8 +412,16 @@
                         <div class="left-con">类型:</div>
                         <div class="right-con">
                             <div class="update">
-                                <div class="label" id="type-name">
+                                <div class="label">
+                                    <select id="type-name1">
 
+                                    </select>
+                                    <select id="type-name2">
+                                        <option></option>
+                                    </select>
+                                    <select id="type-name3">
+                                        <option></option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -411,8 +431,8 @@
                         <div class="left-con">演员:</div>
                         <div class="right-con">
                             <div class="update">
-                                <div class="label" id="actor">
-
+                                <div class="label">
+                                    <input type="text" value="" placeholder="请输入影片演员" id="actor">
                                 </div>
                             </div>
                         </div>
@@ -424,8 +444,10 @@
 
 
                             <div class="update">
-                                <div class="label" id="loc-name">
+                                <div class="label">
+                                    <select id="loc-name">
 
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -437,7 +459,7 @@
 
                             <div class="update">
                                 <div class="label">
-                                    <p id="plot"></p>
+                                    <textarea cols="30" rows="5" placeholder="请输入影片剧情" id="plot"></textarea>
                                 </div>
                             </div>
                         </div>

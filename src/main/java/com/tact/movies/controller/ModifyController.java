@@ -1,5 +1,6 @@
 package com.tact.movies.controller;
 
+import com.tact.movies.entity.CateLog;
 import com.tact.movies.entity.Decade;
 import com.tact.movies.entity.Film;
 import com.tact.movies.entity.Loc;
@@ -24,33 +25,32 @@ public class ModifyController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         String id = req.getParameter("id");
         String name = req.getParameter("name");
         String img = req.getParameter("img");
         String onDecade = req.getParameter("onDecade");
         String status = req.getParameter("status");
         String resolution = req.getParameter("resolution");
+        String cateLogName = req.getParameter("cateLogName");
+        String subClassName = req.getParameter("subClassName");
         String typeName = req.getParameter("typeName");
         String actor = req.getParameter("actor");
         String locName = req.getParameter("locName");
         String plot = req.getParameter("plot");
-        Film film = new Film(id,actor,img,locName,name,onDecade,plot,resolution,status,typeName);
+        Film film = new Film(id,actor,img,locName,name,onDecade,plot,resolution,status,cateLogName,subClassName,typeName);
         int i = service.ModifyData(film);
-        String str1 = "修改成功！";
-        String str2 = "修改失败！";
-        if(i>0){
-            ResponseUtils.responseToJson(resp,str1);
-        }else{
-            ResponseUtils.responseToJson(resp,str2);
-        }
 
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SortData sortData = new SortData();
         List<Decade> decades = service.ShowDecade();
         List<Loc> locs = service.ShowLoc();
-
+        List<CateLog> cateLogs = service.ShowCateLog();
         sortData.setDecades(decades);
         sortData.setLocs(locs);
+        sortData.setCateLogs(cateLogs);
 
         ResponseEntity<SortData> responseEntity = null;
         try{

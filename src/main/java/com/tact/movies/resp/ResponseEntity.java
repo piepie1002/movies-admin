@@ -23,7 +23,7 @@ public class ResponseEntity<T>{
         return success(200,"success",data);
     }
 
-    private static <T> ResponseEntity<T> success(int status, String msg ,T data) {
+    public static <T> ResponseEntity<T> success(int status, String msg ,T data) {
         ResponseEntity responseEntity = new ResponseEntity();
         responseEntity.setStatus(status);
         responseEntity.setMsg(msg);
@@ -34,7 +34,7 @@ public class ResponseEntity<T>{
         return error(404,"error");
     }
 
-    private static <T> ResponseEntity<T> error(int status, String msg) {
+    public static <T> ResponseEntity<T> error(int status, String msg) {
         ResponseEntity responseEntity = new ResponseEntity();
         responseEntity.setStatus(status);
         responseEntity.setMsg(msg);

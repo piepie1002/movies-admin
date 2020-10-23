@@ -1,18 +1,23 @@
 package com.tact.movies.entity;
 
-
 public class CateLog {
-      private String id;
-      private long isUse;
-      private String name;
-      private long sort;
-      private long isVip;
+    private String id;
+    private long isUse;
+    private String name;
+    private long sort;
+    private long isVip;
   
     public CateLog(String id ,String name) {
         this.id = id;
         this.name = name;
     }
-  
+
+    public CateLog(String id, long isUse, String name) {
+        this.id = id;
+        this.isUse = isUse;
+        this.name = name;
+    }
+
     public String getId() {
       return id;
     }
@@ -57,4 +62,22 @@ public class CateLog {
         this.isVip = isVip;
     }
 
+    public CateLog(String id, long isUse, String name, long sort, long isVip) {
+        this.id = id;
+        this.isUse = isUse;
+        this.name = name;
+        this.sort = sort;
+        this.isVip = isVip;
+    }
+
+    @Override
+    public String toString() {
+        return "CateLog{" +
+                "id='" + id + '\'' +
+                ", isUse=" + isUse +
+                ", name='" + name + '\'' +
+                ", sort=" + sort +
+                ", isVip=" + isVip +
+                '}';
+    }
 }

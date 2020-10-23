@@ -8,6 +8,12 @@ public class SubClass {
   private String name;
   private String catalogId;
 
+
+  public SubClass(String id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
   public SubClass(String id, long isUse, String name, String catalogId) {
     this.id = id;
     this.isUse = isUse;
@@ -50,4 +56,13 @@ public class SubClass {
     this.catalogId = catalogId;
   }
 
+  @Override
+  public String toString() {
+    return "SubClass{" +
+            "id='" + id + '\'' +
+            ", isUse=" + isUse +
+            ", name='" + name + '\'' +
+            ", catalogId='" + catalogId + '\'' +
+            '}';
+  }
 }

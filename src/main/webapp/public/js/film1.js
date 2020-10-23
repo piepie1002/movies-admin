@@ -1,65 +1,56 @@
-const URL = "http://localhost:8080/api";
+const URL = "http://localhost:8080/api/AddFilmController";
 
 
 $(function () {
     //给类型二级下拉框传入数据
-    $("cataLog_id_subClass").change(function () {
+    $("#catalog-1").change(function () {
         var cataLog_id = $(this).val();
-        /*$.ajax({
-            url:FilmUrl,
-            type:"POST",
-            dataType:"json",
-            action:"getSubClass",
-            data:"cataLOg_id="+cataLog_id,
-            success:function (data) {
-                $("subClass_id").find("option").remove();
-                let parse = JSON.parse(data);
-                for (let i = 0; i < parse.length ; i++) {
-                    let op = "<option val='"+ parse[i].id +"'>"+ parse[i].name +"</option>"
-                    $("subClass_id").append(op);
-                }
-            },
-            error:function () {
-                alert("添加二级下拉框失败")
-            }
-        })*/
-        let subClassUrl = URL + "/getSubClass";
         let params = {
-            action : getSubClass,
-            cataLog_id : cataLog_id
+            action: "getSubClassData",
+            cataLogId: cataLog_id
         }
-        $.post(subClassUrl, params, function (data) {
-            $("subClass_id").find("option").remove();
-            for (let i = 0; i < data.length ; i++) {
-                let op = "<option val='" + data[i].id + "'>" + data[i].name + "</option>"
-                $("subClass_id").append(op);
-            }
-        } )
-
-
-    })
-
-    //给类型三级下拉框传入数据
-    $("subClass_id").change(function () {
-        $.ajax({
-            url: "",
-            type: "POST",
-            dataType: "json",
-            action: "getType",
-            data: "subClass_id" + $("subClass_id").val(),
-            success: function (data) {
-                $("type_id").find("option").remove();
-                let parse = JSON.parse(data);
-                for (let i = 0; i <parse.length; i++) {
-                    let op = "<option val='"+ parse[i].id +"'>" +parse[i].name+ "</option>"
-                    $("type_id").append(op);
-                }
-            },
-            error: function () {
-                alert("添加三级下拉框失败")
+        $.post(URL, params, function (result) {
+            if (result.status == 200) {
+                $("#subClass_id").find("option").remove();
+                showSubClassData(result.data.subClasses);
+            } else {
+                alert("系统繁忙，请稍后再试");
             }
         })
     })
+
+    //给类型三级下拉框传入数据
+    $("#subClass_id").change(function () {
+        var subClass_id = $(this).val();
+        let params = {
+            action: "getTypeData",
+            subClassId: subClass_id
+        }
+        $.post(URL, params, function (result) {
+            if (result.status == 200) {
+                $("#type_id").find("option").remove();
+                showTypeData(result.data.types);
+            } else {
+                alert("系统繁忙，请稍后再试");
+            }
+        })
+    })
+
+    function showSubClassData(subClasses) {
+        for (const subClass of subClasses) {
+            $("#subClass_id").append(
+                $("<option value='" + subClass.id + "'>" + subClass.name + "</option>")
+            )
+        }
+    }
+
+    function showTypeData(types) {
+        for (const type of types) {
+            $("#type_id").append(
+                $("<option value='" + type.id + "'>" + type.name + "</option>")
+            )
+        }
+    }
 
 
     $("#addFilm-btn").click(function () {
@@ -114,34 +105,36 @@ $(function () {
                 alert("地区编码不能为空");
             } else if (plot_val == "") {
                 alert("剧情不能为空");
-            }else if (is_vip == "") {
+            } else if (is_vip == "") {
                 alert("请选择是否为VIP");
             }
         } else {
-            //添加影片
-            $.ajax({
-                url: "addFilm.html",
-                type: "post",
-                dataType: "json",
-                data:
-                    "filmId=" + film_id +
-                    "&name=" + name_val +
-                    "&image=" + image_val +
-                    "&onDecade=" + onDecade_val +
-                    "&status=" + status_val +
-                    "&resolution=" + resolution_val +
-                    "&typeName=" + typeName_val +
-                    "&type_id=" + type_id_val +
-                    "&actor=" + actor_val +
-                    "&locName=" + locName_val +
-                    "&loc_id=" + loc_id_val +
-                    "&plot=" + plot_val+
-                    "&isVip=" + is_vip,
-                success: addSuccess,
-                error: function () {
-                    alert("添加影片失败！");
-                }
-            });
+
+            let params ={
+                action: "addFilm",
+                filmId : film_id,
+                name : name_val,
+                image : image_val,
+                onDecade : onDecade_val,
+                status : status_val,
+                resolution : resolution_val,
+                typeName : typeName_val,
+                type_id : type_id_val,
+                actor : actor_val,
+                locName : locName_val,
+                loc_id : loc_id_val,
+                plot : plot_val,
+                isVip : is_vip
+            }
+            $.post(URL,params,function (result) {
+
+            })
+
         }
     })
 })
+
+//清空影片表单
+function clearAddFilmInput() {
+    $(".addFilmInput").val("");
+}
